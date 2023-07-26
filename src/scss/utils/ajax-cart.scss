@@ -15,7 +15,7 @@
 
   /* Show a loading indicator */
   form.js-ajax-cart-form-in-progress:after { 
-    content: 'Adding to cart…'
+    content: 'Adding to cart…';
     display: block; 
   }
 

@@ -20,10 +20,5 @@
 
     ]
   },
-  "presets": {
-    "Naked": {
-      "customer_layout": "theme",
-      "example_option": "option"
-    }
-  }
+  "presets": {}
 }

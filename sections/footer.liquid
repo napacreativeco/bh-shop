@@ -1,0 +1,80 @@
+<div class="footer-wrapper">
+    <div class="top-row">
+
+        <div class="tagline">
+            <p>{{ section.settings.footer_tagline }}</p>
+        </div>
+
+        <div class="social">
+            {% if section.blocks.footer_social_links != empty %}
+                {% for block in section.blocks.footer_social_links %}
+                    <a href="{{ block.settings.social_network_url }}" title="{{ block.settings.social_network_title }}">
+                        {{ block.settings.social_network_title }}
+                    </a>
+                {% endfor %}
+            {% endif %}
+        </div>
+
+        <div class="newsletter">
+
+        </div>
+
+    </div>
+    <div class="bottom-row">
+        {% if  section.settings.footer_logo != empty %}
+            <img src="{{ section.settings.footer_logo.value | image_url }}" alt="{{ site.title }}" />
+        {% else %}
+            <img src="{{ 'bighouse-logo.svg' | asset_url }}" alt="{{ site.title }}" />
+        {% endif %}
+    </div>
+</div>
+
+{% schema %}
+    {
+      "name": "Footer",
+      "tag": "footer",
+      "class": "footer",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "footer_logo",
+          "label": "Footer Logo"
+        },
+        {
+          "type": "text",
+          "id": "footer_tagline",
+          "default": "for equity, parity, and creativity.",
+          "label": "Footer Tagline"
+        }
+      ],
+      "blocks": [
+        {
+            "type": "footer_social_links",
+            "name": "Social Network",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "social_network_title",
+                    "label": "Name"
+                },
+                {
+                    "type": "url",
+                    "id": "social_network_url",
+                    "label": "Url"
+                }
+            ]
+        }
+      ],
+      "presets": [
+        {
+          "name": "Navbar",
+          "settings": {}
+        }
+      ],
+      "enabled_on": {
+        "templates": ["*"],
+        "groups": ["footer"]
+      }
+    }
+{% endschema %}

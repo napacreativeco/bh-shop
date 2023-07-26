@@ -48,26 +48,17 @@
 
 <body id="{{ page_title | handle }}" class="{% if customer %}customer-logged-in {% endif %}template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}" >
   
-  {% section 'navbar.liquid' %}
-
-  {% comment %}
-    IE8 and IE9 don't support the HTML5 placeholder attribute, so it's a good idea to use JavaScript
-    to show and hide the placeholder text.
-    Have a look in assets/shop.js.liquid to see sample JavaScript for this.
-  {% endcomment %}      
-  <form action="/search" method="get" class="search-form right" role="search">
-    <input name="q" type="search" id="search-field" placeholder="Search store..." value="{{ search.terms | escape }}" />
-    <input type="submit" id="search-submit" value="Search" />
-  </form>
+  {% section 'navbar' %}
 
   <div class="my-floating-cart">
     {% section 'cart' %}
   </div>
-  
 
   <main role="main">
     {{ content_for_layout }}
   </main>
+
+  {% section 'footer' %}
 
   <script type="application/json" data-ajax-cart-initial-state>
     {{ cart | json }}
@@ -91,11 +82,6 @@
       "addToCartCssClass": "js-my-cart-open"
     }
   </script>
-
-
-  <footer>
-    Copyright &copy; {{ "now" | date: "%Y" }} {{ shop.name }}. {{ powered_by_link }}.
-  </footer>
 
   {{ 'shop.js'  | asset_url | script_tag }}
 

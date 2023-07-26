@@ -1,19 +1,29 @@
 <div class="navbar-wrapper">
     <div class="left">
-        <a id="logo" href="/">
-            {% if section.settings.nav_logo == empty %}
-                {{ 'logo.png' | asset_url | img_tag: shop.name }}
-            {% else %}
-                {{ section.settings.nav_logo | img_url | img_tag: shop.name }}
-            {% endif %}
-        </a>
+        <div class="site-logo">
+            <a id="logo" href="/">
+                {% if section.settings.nav_logo == empty %}
+                    {{ 'logo.png' | asset_url | img_tag: shop.name }}
+                {% else %}
+                    {{ section.settings.nav_logo | img_url | img_tag: shop.name }}
+                {% endif %}
+            </a>
+        </div>
     </div>
     <div class="right">
-        {% if section.settings.cart_icon == empty %}
-            {{ 'cart-icon.svg' | asset_url | img_tag: shop.name }}
-        {% else %}
-            {{ section.settings.nav_logo | img_url | img_tag: shop.name }}
-        {% endif %}
+        <div class="cart-icon">
+            <a href="{{ routes.cart_url }}" data-ajax-cart-toggle-class-button="js-my-cart-open">
+                {% if section.settings.cart_icon == empty %}
+                    <img src="{{ 'cart-icon.svg' | asset_url | image_url }}" />
+                {% else %}
+                    {{ section.settings.cart_icon | img_url | img_tag: shop.name }}
+                {% endif %}
+
+                <span data-ajax-cart-bind-state="cart.item_count">
+                    {{ cart.item_count }}
+                </span>
+            </a>
+        </div>
     </div>
 </div>
 
