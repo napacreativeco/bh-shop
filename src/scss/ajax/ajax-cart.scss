@@ -1,0 +1,25 @@
+.my-cart__items { 
+    opacity: 1;
+    transition: opacity .2s;
+  }
+  
+  /* Make the area with controls visually disabled */
+  body.js-ajax-cart-request-in-progress .my-cart__items {
+    opacity: .7;
+  }
+
+  /* Make the submit button visually disabled */
+  form.js-ajax-cart-form-in-progress [type="submit"] {
+    opacity: .7;  
+  }
+
+  /* Show a loading indicator */
+  form.js-ajax-cart-form-in-progress:after { 
+    content: 'Adding to cart…'
+    display: block; 
+  }
+
+  .my-floating-cart { display: none; }
+
+  /* Show the floating cart if the 'js-my-cart-open' CSS class exists */
+  .js-my-cart-open .my-floating-cart { display: block; }

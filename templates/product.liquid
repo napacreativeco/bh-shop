@@ -99,6 +99,10 @@
       <div id="product-add">
         <input type="submit" name="add" id="add" value="{{ add_to_cart | escape }}">
       </div>
+
+      <div data-ajax-cart-messages="form" > 
+        <!-- Errors and messages appear here --> 
+      </div>
       
       {% if collection %}
         {% if collection.previous_product or collection.next_product %}

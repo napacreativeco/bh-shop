@@ -1,0 +1,50 @@
+<div class="navbar-wrapper">
+    <div class="left">
+        <a id="logo" href="/">
+            {% if section.settings.nav_logo == empty %}
+                {{ 'logo.png' | asset_url | img_tag: shop.name }}
+            {% else %}
+                {{ section.settings.nav_logo | img_url | img_tag: shop.name }}
+            {% endif %}
+        </a>
+    </div>
+    <div class="right">
+        {% if section.settings.cart_icon == empty %}
+            {{ 'cart-icon.svg' | asset_url | img_tag: shop.name }}
+        {% else %}
+            {{ section.settings.nav_logo | img_url | img_tag: shop.name }}
+        {% endif %}
+    </div>
+</div>
+
+{% schema %}
+    {
+      "name": "Navbar",
+      "tag": "header",
+      "class": "navbar",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "nav_logo",
+          "label": "Navbar Logo"
+        },
+        {
+          "type": "image_picker",
+          "id": "cart_icon",
+          "label": "Cart Icon"
+        }
+      ],
+      "presets": [
+        {
+          "name": "Navbar",
+          "settings": {}
+        }
+      ],
+      "enabled_on": {
+        "templates": ["*"],
+        "groups": ["header"]
+      }
+    }
+{% endschema %}
+    
