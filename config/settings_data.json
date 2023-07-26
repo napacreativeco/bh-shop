@@ -1,5 +1,6 @@
 {
   "current": {
+    "use_logo": false,
     "customer_layout": "theme",
     "example_option": "option",
     "sections": {
@@ -14,11 +15,19 @@
         "type": "cart",
         "settings": {
         }
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {
+          "footer_logo": "shopify:\/\/shop_images\/bighouse-logo.svg",
+          "footer_tagline": "for equity, parity, and creativity."
+        }
       }
     },
     "content_for_index": [
 
     ]
   },
-  "presets": {}
+  "presets": {
+  }
 }
