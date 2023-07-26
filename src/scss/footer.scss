@@ -54,7 +54,7 @@ footer {
                         padding: 7px 25px;
                     }  
 
-                    input[type="submit"] {
+                    input[type="submit"]:hover {
                         background: var(--black);
                         color: var(--white);
                     }

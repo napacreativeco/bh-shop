@@ -15,6 +15,10 @@
         }
     }
 
+    .image:hover {
+        opacity: 0.8;
+    }
+
     .data {
         background: var(--black);
         color: var(--white);

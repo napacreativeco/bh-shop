@@ -2,13 +2,24 @@
 {% assign sold_out = 'Sold Out' %}
 {% assign unavailable = 'Unavailable' %}
 
+{% assign product_vendor_handle = product.vendor | handle %}
+{% if collections[product_vendor_handle].handle == product_vendor_handle %}
+  {% assign vendor_url = collections[product_vendor_handle].url %}
+{% else %}
+  {% assign vendor_url = product.vendor | url_for_vendor %}
+{% endif %}
+
+{% assign hide_default_title = false %}
+{% if product.variants.size == 1 and product.variants.first.title contains 'Default' %}
+  {% assign hide_default_title = true %}
+{% endif %}   
+
+<meta itemprop="url" content="{{ shop.url }}{{ product.url }}" />
+<meta itemprop="image" content="{{ product | img_url: 'grande' }}" />
+
 <div class="single-product" itemscope itemtype="http://schema.org/Product">
   
-  <meta itemprop="url" content="{{ shop.url }}{{ product.url }}" />
-  <meta itemprop="image" content="{{ product | img_url: 'grande' }}" />
-  
   <form action="/cart/add" method="post" enctype="multipart/form-data">
-
 
     <div class="images">
       {% if product.images.size == 0 %}
@@ -40,72 +51,56 @@
     <div class="data">
 
       <div class="limited-indicator">
-        <span>
-          {{ product.metafields.custom.limited_indicator.value }}
-        </span>
+        {% if product.metafields.custom.limited_indicator.value == false %}
+
+        {% else %}
+          <span>
+            {{ 'Limited Edition' | escape }}
+          </span>
+        {% endif %}
       </div>
 
       <div class="title">
         <h1>{{ product.title }}</h1>
       </div>
       
-      <div class="excerpt">
-        {{ product.metafields.custom.excerpt | newline_to_br }}
-      </div>
-      
-    </div>
-
-    
-      {% assign product_vendor_handle = product.vendor | handle %}
-      {% if collections[product_vendor_handle].handle == product_vendor_handle %}
-        {% assign vendor_url = collections[product_vendor_handle].url %}
-      {% else %}
-        {% assign vendor_url = product.vendor | url_for_vendor %}
+      {% if product.metafields.custom.excerpt != blank %}
+        <div class="excerpt">
+          {{ product.metafields.custom.excerpt | metafield_tag | newline_to_br }}
+        </div>
       {% endif %}
-      <h2 itemprop="brand">{{ product.vendor | link_to: vendor_url }}</h2>
       
       <div itemprop="description">
         {{ product.description }}
       </div>
-      
-      
-      {% assign hide_default_title = false %}
-      {% if product.variants.size == 1 and product.variants.first.title contains 'Default' %}
-        {% assign hide_default_title = true %}
-      {% endif %}       
 
-      <div id="product-variants" class="{% if hide_default_title %} hidden{% endif %}">
-        <select id="product-select" name="id">
-        {% for variant in product.variants %}
-          <option{% if variant == product.selected_or_first_available_variant %} selected{% endif %} value="{{ variant.id }}">
-          {{ variant.title }} - {{ variant.price | money }}
-          </option>
-        {% endfor %}
-        </select>
-      </div>        
-             
-      <div id="product-add">
-        <input type="submit" name="add" id="add" value="{{ add_to_cart | escape }}">
+      {% render 'product--variant-radios' %}
+            
+      <div class="add-to-cart" id="product-add">
+        <input class="button" type="submit" name="add" id="add" value="{{ add_to_cart | escape }}">
       </div>
 
       <div data-ajax-cart-messages="form" > 
         <!-- Errors and messages appear here --> 
       </div>
+
+    </div>
       
-      {% if collection %}
-        {% if collection.previous_product or collection.next_product %}
-        <div>     
-        {% if collection.previous_product %}
-          {% capture prev_url %}{{ collection.previous_product}}#content{% endcapture %}
-          <span class="left">{{ 'Previous Product' | link_to: prev_url }}</span>
-        {% endif %}
-        {% if collection.next_product %}
-          {% capture next_url %}{{ collection.next_product}}#content{% endcapture %}
-          <span class="right">{{ 'Next Product' | link_to: next_url }}</span>
-        {% endif %}
-        </div>
-        {% endif %}
+
+    {% if collection %}
+      {% if collection.previous_product or collection.next_product %}
+      <div>     
+      {% if collection.previous_product %}
+        {% capture prev_url %}{{ collection.previous_product}}#content{% endcapture %}
+        <span class="left">{{ 'Previous Product' | link_to: prev_url }}</span>
       {% endif %}
+      {% if collection.next_product %}
+        {% capture next_url %}{{ collection.next_product}}#content{% endcapture %}
+        <span class="right">{{ 'Next Product' | link_to: next_url }}</span>
+      {% endif %}
+      </div>
+      {% endif %}
+    {% endif %}
 
   </form>
 
@@ -115,7 +110,6 @@
   Adding support for product options. See here for details:  
   http://docs.shopify.com/support/your-website/themes/can-i-make-my-theme-use-products-with-multiple-options
 {% endcomment %}
-
 <script>
   
 var selectCallback = function(variant, selector) {
