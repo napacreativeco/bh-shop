@@ -18,6 +18,18 @@
       },
       "footer": {
         "type": "footer",
+        "blocks": {
+          "17977ef0-32bb-4593-81ab-f4cc60d0ae3d": {
+            "type": "footer_social_links",
+            "settings": {
+              "social_network_title": "Twitter",
+              "social_network_url": "https:\/\/www.twitter.com\/bighousedot"
+            }
+          }
+        },
+        "block_order": [
+          "17977ef0-32bb-4593-81ab-f4cc60d0ae3d"
+        ],
         "settings": {
           "footer_logo": "shopify:\/\/shop_images\/bighouse-logo.svg",
           "footer_tagline": "for equity, parity, and creativity."
