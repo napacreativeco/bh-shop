@@ -1,8 +1,71 @@
 footer {
+    font-size: 1rem;
     .footer-wrapper {
         padding: 12px var(--side-padding);
 
+        .top-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-gap: 20px;
+            align-items: flex-end;
+
+            ul {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                align-items: flex-end;
+                gap: 12px;
+
+                a {
+                    text-transform: lowercase;
+                }
+
+                a:hover {
+                    text-decoration: underline;
+                }
+            }
+
+            .newsletter {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-end;
+
+                form {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-end;
+                    gap: 10px;
+                    width: 100%;
+
+                    input[type="email"] {
+                        width: 100%;
+                        max-width: 220px;
+                        height: 100%;
+                        border: var(--border-black);
+                        background: transparent;
+                    }
+    
+                    input[type="submit"] {
+                        height: 100%;
+                        border: var(--border-black);
+                        background: transparent;
+                        padding: 7px 25px;
+                    }  
+
+                    input[type="submit"] {
+                        background: var(--black);
+                        color: var(--white);
+                    }
+
+                }
+            }
+        }
+
         .bottom-row {
+            padding-top: 20px;
+
             img {
                 width: 100%;
             }

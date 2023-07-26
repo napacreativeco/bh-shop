@@ -1,0 +1,46 @@
+{% assign on_sale = false %}
+{% if product.compare_at_price > product.price %}
+  {% assign on_sale = true %}
+{% endif %}
+
+<li class="product-card {% unless product.available %} sold-out{% endunless %}{% if on_sale %} on-sale{% endif %}">
+
+  <div class="image" onclick="window.location='{{ product.url | within: collection }}';">
+    <img src="{{ product | img_url: 'grande' }}" alt="{{ product.featured_image.alt | escape }}" />
+  </div>
+  
+  <div class="data">
+
+    <div class="title">
+      <a href="{{ product.url | within: collection }}">
+        {{ product.title }}
+      </a>
+    </div>
+
+    <div class="type">
+      <a href="{{ product.url | within: collection }}">
+        {{ product.type }}
+      </a>
+    </div>  
+
+    <div class="price" id="product-price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+      <meta itemprop="priceCurrency" content="{{ shop.currency }}" />
+      {% if product.available %}
+        <link itemprop="availability" href="http://schema.org/InStock" />
+      {% else %}
+        <link itemprop="availability" href="http://schema.org/OutOfStock" />
+      {% endif %}
+      <p>
+        {% assign variant = product.selected_or_first_available_variant %}
+        {% if product.compare_at_price > product.price %}
+          <span class="product-price on-sale" itemprop="price">{{ variant.price | money_without_trailing_zeros }}</span>
+          <s class="product-compare-price">{{ variant.compare_at_price | money_without_trailing_zeros }}</s>
+        {% else %}
+          <span class="product-price" itemprop="price">{{ variant.price | money_without_trailing_zeros }}</span>
+        {% endif %}
+      </p>
+    </div>
+
+  </div>
+  
+</li>
