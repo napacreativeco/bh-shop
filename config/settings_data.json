@@ -1,7 +1,24 @@
 {
   "current": {
     "customer_layout": "theme",
-    "example_option": "option"
+    "example_option": "option",
+    "sections": {
+      "navbar": {
+        "type": "navbar",
+        "settings": {
+          "nav_logo": "shopify:\/\/shop_images\/bighouse-logo.svg",
+          "cart_icon": "shopify:\/\/shop_images\/cart-icon.svg"
+        }
+      },
+      "cart": {
+        "type": "cart",
+        "settings": {
+        }
+      }
+    },
+    "content_for_index": [
+
+    ]
   },
   "presets": {
     "Naked": {
