@@ -77,6 +77,7 @@
         .totals {
             display: flex;
             flex-direction: column;
+            align-self: flex-end;
             gap: 8px;
             padding: 10px 10px 10px 10px;
             // position: absolute;
