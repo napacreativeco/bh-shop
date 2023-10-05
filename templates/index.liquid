@@ -1,3 +1,6 @@
+{{ 'collection--default.css' | asset_url | stylesheet_tag }}
+{{ 'product--card.css' | asset_url | stylesheet_tag }}
+
 <ul class="products-grid">
   {% for product in collections.frontpage.products %}
     {% render 'product-card' product: product %}

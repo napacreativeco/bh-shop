@@ -5,14 +5,21 @@
         justify-content: space-between;
         align-items: center;
         flex-wrap: nowrap;
-        padding: 12px var(--side-padding);
+        padding: 4px var(--side-padding);
+
         .site-logo {
             img {
                 width: 100%;
-                max-width: 132px;
+                //max-width: 132px;
+                height: 40px;
             }
         }
 
+        .cart-icon {
+            position: relative;
+            z-index: 99;
+        }
+        
         .cart-icon a {
             display: flex;
             flex-direction: row;

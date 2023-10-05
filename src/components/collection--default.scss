@@ -1,0 +1,11 @@
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, calc(100% / 3));
+    gap: 0px;
+}
+
+@media screen and (max-width: 767px) {
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+}

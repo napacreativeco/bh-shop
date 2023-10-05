@@ -1,19 +1,24 @@
-{% paginate collection.products by 20 %}
+{{ 'collection--default.css' | asset_url | stylesheet_tag }}
+{{ 'product--card.css' | asset_url | stylesheet_tag }}
 
-  <ul>
-    {% for product in collection.products %}
-      {% render 'product-card' %}
-    {% else %}
-      <li>{{ 'no products found' | escape }}</li>
-    {% endfor %}
-  </ul>
+<div class="collection-page">
+  {% paginate collection.products by 6 %}
 
-
-  {% if paginate.pages > 1 %}
-    {{ paginate | default_pagination }}
-  {% endif %}
-
-{% endpaginate %}
+    <ul class="products-grid">
+      {% for product in collection.products %}
+        {% render 'product-card' product: product %}
+      {% else %}
+        <li>{{ 'no products found' | escape }}</li>
+      {% endfor %}
+    </ul>
+  
+  
+    {% if paginate.pages > 1 %}
+      {{ paginate | default_pagination }}
+    {% endif %}
+  
+  {% endpaginate %}
+</div>
 
 {% comment %}
   JavaScript for collection sorting.

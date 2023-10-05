@@ -1,0 +1,61 @@
+{{ 'product--card-cart.css' | asset_url | stylesheet_tag }}
+
+<li class="cart-item">
+
+    <div class="left">
+        {% for image in item.product.media limit: 1 %}
+            <div class="image" onclick="window.location='{{ item.product.url }}';" style="background: url('{{ image | image_url: width: 200 }}'); background-size: cover; background-position: center center;">
+            </div>
+        {% endfor %}
+    </div>
+
+    <div class="right">
+        <div class="title">
+            <a href="{{ item.url }}">
+                {{ item.product.title }}
+            </a>
+        </div>
+    
+        <div class="type">
+            {{ item.product.type }} {{ item.title | remove: item.product.title }}
+        </div>
+    
+        <div class="excerpt">
+            {{ item.product.metafields.custom.excerpt | metafield_tag }}
+        </div>
+    
+        <div class="quantity">
+          <div class="label">
+            {{ 'Quantity ' | escape }}
+          </div> 
+    
+          <div class="buttons">
+            <a data-ajax-cart-request-button
+                href="{{ routes.cart_change_url }}?line={{ forloop.index }}&quantity={{ item.quantity | minus: 1 }}">
+                {{ '-' }}
+            </a>
+            <input data-ajax-cart-quantity-input="{{ forloop.index }}" value="{{ item.quantity }}" name="updates[]" type="number"/>
+            <a data-ajax-cart-request-button
+                href="{{ routes.cart_change_url }}?line={{ forloop.index }}&quantity={{ item.quantity | plus: 1 }}">
+                {{ '+' }}
+            </a>
+          </div>
+        </div>
+    
+        <div class="lower">
+            <div class="remove">
+                <a data-ajax-cart-request-button href="{{ item.url_to_remove }}" rel="{{ item.id }}">
+                    {{ 'remove from cart' | escape }}
+                </a>
+            </div>
+            <div class="price">
+                {{ price | money_without_trailing_zeros }}
+            </div>
+        </div>
+    </div>
+
+
+
+
+  </li>
+  <div data-ajax-cart-messages="{{ item.key }}"></div>

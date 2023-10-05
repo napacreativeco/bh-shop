@@ -1,0 +1,75 @@
+{{ 'cart--drawer.css' | asset_url | stylesheet_tag }}
+
+<div class="cart-drawer">
+
+  <div class="drawer-header">
+    <span class="title">{{ 'Cart' | upcase | escape }}</span>
+    <span class="close-drawer">{{ 'X' | upcase | escape }}</span>
+  </div>
+
+  <div class="drawer-items">
+    <form action="{{ routes.cart_url }}" method="post">
+
+
+        <div class="cart-items" data-ajax-cart-section>
+          {% if cart.empty? %}
+            <div class="drawer-empty">
+              no items in cart
+            </div>
+          {% else %}
+            <ul class="drawer-has-items">
+              {% for item in cart.items %}
+                {% render 'product-card--cart' item: item, cart: cart, forloop: forloop, price: item.final_line_price %}
+              {% endfor %}
+            </ul>    
+          {% endif %}
+        </div>
+      
+
+      <div class="totals">
+
+        <div class="total totals-item">
+          <div class="label">
+            {{ 'Total' | upcase | escape }}
+          </div>
+          <div class="value">
+              {{ cart.total_price | money_without_trailing_zeros }}
+          </div>
+        </div>
+
+        
+          <div class="tax totals-item">
+            <div class="label">
+              {{ 'Tax' | upcase | escape }}
+            </div>
+            <div class="value">
+              {% if tax_line.price > 0 %}
+                {{ tax_line.rate_percentage }}
+              {% else %}
+                N/A
+              {% endif %}
+            </div>
+          </div>
+        
+          <div class="subtotal totals-item">
+            <div class="label">
+              {{ 'Subtotal' | upcase | escape }}
+            </div>
+            <div class="value">
+              {{ cart.items_subtotal_price | money_without_trailing_zeros }}
+            </div>
+          </div>
+        
+
+        <div class="go-to-checkout">
+          <button type="submit" name="checkout">{{ 'Checkout' | escape | upcase }}</button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+
+</div>
+
+
+{% schema %} { "name": "My Cart" } {% endschema %}

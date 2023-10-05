@@ -4,6 +4,9 @@
 
     --side-padding: 15px;
     --border-black: 1px solid var(--black);
+    --border-white: 1px solid var(--white);
+
+    --sans-serif: Helvetica, Arial, sans-serif;
 }
 
 @import './reset.scss';
@@ -15,6 +18,8 @@
 body {
     font-family: Helvetica, Arial, sans-serif;
     font-size: 14px;
+    letter-spacing: 0.1px;
+    font-weight: 400;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -47,11 +52,6 @@ input {
 
 @import './navbar.scss';
 @import './footer.scss';
-
-/* Products */
-@import './products/collections.scss';
-@import './products/product-card.scss';
-@import './products/single.scss';
 
 /* Utils */
 @import './utils/ajax-cart.scss';

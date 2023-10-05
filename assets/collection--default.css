@@ -1,0 +1,1 @@
+.products-grid{display:grid;grid-template-columns:repeat(3,33.3333333333%);gap:0}@media screen and (max-width:767px){.products-grid{grid-template-columns:1fr}}

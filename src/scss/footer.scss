@@ -1,31 +1,42 @@
 footer {
     font-size: 1rem;
+    
     .footer-wrapper {
-        padding: 12px var(--side-padding);
+        padding: 20px var(--side-padding) 15px var(--side-padding);
 
         .top-row {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-columns: 1fr 1fr;
             grid-gap: 20px;
             align-items: flex-end;
+            font-size: 12px;
 
-            ul {
-                list-style: none;
-                margin: 0;
-                padding: 0;
+            .left {
+                width: 100%;
                 display: grid;
                 grid-template-columns: 1fr 1fr;
-                align-items: flex-end;
-                gap: 12px;
+                gap: 10px;
 
-                a {
-                    text-transform: lowercase;
-                }
-
-                a:hover {
-                    text-decoration: underline;
+                ul {
+                    list-style: none;
+                    margin: 0;
+                    padding: 0;
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    align-items: flex-end;
+                    gap: 12px;
+    
+                    a {
+                        text-transform: lowercase;
+                    }
+    
+                    a:hover {
+                        text-decoration: underline;
+                    }
                 }
             }
+
+
 
             .newsletter {
                 display: flex;
@@ -42,16 +53,25 @@ footer {
                     input[type="email"] {
                         width: 100%;
                         max-width: 220px;
-                        height: 100%;
                         border: var(--border-black);
                         background: transparent;
+                        padding: 0px 6px;
+                        font-size: 12px;
+                        border-radius: 0px;
+                        font-family: var(--sans-serif);
+                        font-weight: 400;
                     }
     
                     input[type="submit"] {
                         height: 100%;
                         border: var(--border-black);
                         background: transparent;
-                        padding: 7px 25px;
+                        padding: 4px 25px;
+                        font-size: 12px;
+                        cursor: pointer;
+                        border-radius: 0px;
+                        font-family: var(--sans-serif);
+                        font-weight: 400;
                     }  
 
                     input[type="submit"]:hover {
@@ -69,6 +89,33 @@ footer {
             img {
                 width: 100%;
             }
+        }
+    }
+}
+
+/*
+----------------------------------------------------------------
+*/
+@media screen and (max-width: 767px) {
+    footer {
+        .footer-wrapper {
+
+            .top-row {
+                display: flex;
+                flex-direction: column-reverse;
+
+                .newsletter {
+                    width: 100%;
+
+                    form {
+                        input[type="email"] {
+                            max-width: 100%;
+                        }
+                    }
+                }
+            }
+
+
         }
     }
 }

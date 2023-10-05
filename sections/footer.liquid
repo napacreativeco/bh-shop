@@ -1,11 +1,12 @@
 <div class="footer-wrapper">
     <div class="top-row">
 
-        <div class="tagline">
-            <p>{{ section.settings.footer_tagline }}</p>
-        </div>
+        <div class="left">
 
-        <div class="social">
+            <div class="tagline">
+              <p>{{ section.settings.footer_tagline }}</p>
+            </div>
+
             <ul>
                 {% for block in section.blocks %}
                     <li {{ block.shopify_attributes }}>
@@ -17,17 +18,20 @@
             </ul>
         </div>
 
-        <div class="newsletter">
+        <div class="right newsletter">
             {% render 'newsletter-signup' %}
         </div>
 
     </div>
+
     <div class="bottom-row">
+      <a href="/" title="{{ shop.name }}">
         {% if section.settings.footer_logo == empty %}
             <img src="{{ 'bighouse-logo.svg' | asset_url }}" alt="{{ site.title }}" />
         {% else %}
             <img src="{{ section.settings.footer_logo | image_url }}" alt="{{ site.title }}" />
         {% endif %}
+      </a>
     </div>
 </div>
 

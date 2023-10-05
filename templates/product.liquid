@@ -1,3 +1,5 @@
+{{ 'product--page.css' | asset_url | stylesheet_tag }}
+
 {% assign add_to_cart = 'Add to cart' %}
 {% assign sold_out = 'Sold Out' %}
 {% assign unavailable = 'Unavailable' %}
@@ -22,36 +24,28 @@
   <form action="/cart/add" method="post" enctype="multipart/form-data">
 
     <div class="images">
-      {% if product.images.size == 0 %}
-  
-        <img src="{{ '' | img_url: 'grande' }}" alt="" />
-      
-      {% else %}
-      
-        {% assign featured_image = product.selected_or_first_available_variant.featured_image | default: product.featured_image %}
-        <a href="{{ featured_image | img_url: '1024x1024' }}">
-          <img src="{{ featured_image | img_url: 'grande' }}" alt="{{ product.title | escape }}" />
-        </a>
 
-        {% if product.images.size > 1 %}
-          <ul>
-            {% for image in product.images %}
-              <li>
-                <a href="{{ image | img_url: '1024x1024' }}">
-                  <img src="{{ image | img_url: 'large' }}" alt="{{ image.alt | escape }}" />
-                </a>
-              </li>
-            {% endfor %}
-          </ul>
-        {% endif %}
-      
-      {% endif %}
+      <div class="swiper">
+        <div class="swiper-wrapper">
+
+          {% for image in product.images %}
+            <div class="swiper-slide" style="background: url('{{ image | img_url: 'large' }}'); background-size: cover; background-position: center center;">
+              {% comment %} <img src="{{ image | img_url: 'large' }}" alt="{{ image.alt | escape }}" /> {% endcomment %}
+            </div>
+          {% endfor %}
+              
+        </div>
+
+        <div class="swiper-pagination"></div>
+
+      </div>
+
     </div>
     
     <div class="data">
 
       <div class="limited-indicator">
-        {% if product.metafields.custom.limited_indicator.value == false %}
+        {% if product.metafields.custom.limited_indicator.value == false or product.metafields.custom.limited_indicator.value == blank %}
 
         {% else %}
           <span>
@@ -69,18 +63,28 @@
           {{ product.metafields.custom.excerpt | metafield_tag | newline_to_br }}
         </div>
       {% endif %}
-      
-      <div itemprop="description">
-        {{ product.description }}
+
+      <div class="price">
+        {% if product.price_varies %}
+          {{ product.price_min | money_without_trailing_zeros }}
+        {% else %}
+          {{ product.price | money_without_trailing_zeros }}
+        {% endif %}
       </div>
+      
+      {% if product.description != blank %}
+        <div class="description">
+          {{ product.description }}
+        </div>
+      {% endif %}
 
       {% render 'product--variant-radios' %}
-            
+ 
       <div class="add-to-cart" id="product-add">
         <input class="button" type="submit" name="add" id="add" value="{{ add_to_cart | escape }}">
       </div>
 
-      <div data-ajax-cart-messages="form" > 
+      <div class="form-errors" data-ajax-cart-messages="form" > 
         <!-- Errors and messages appear here --> 
       </div>
 
