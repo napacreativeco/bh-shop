@@ -28,7 +28,7 @@
         <div class="label">
           {{ 'Total' | upcase | escape }}
         </div>
-        <div class="value" data-ajax-cart-bind-state="cart.total_price | money_without_trailing_zeros">
+        <div class="total-value value">
             {{ cart.total_price | money_without_trailing_zeros }}
         </div>
       </div>
@@ -38,7 +38,7 @@
           <div class="label">
             {{ 'Tax' | upcase | escape }}
           </div>
-          <div class="value" data-ajax-cart-bind-state="tax_line.price">
+          <div class="value">
             {% if tax_line.price > 0 %}
               {{ tax_line.rate_percentage }}
             {% else %}
@@ -51,9 +51,8 @@
           <div class="label">
             {{ 'Subtotal' | upcase | escape }}
           </div>
-          <div class="value" data-ajax-cart-bind-state="cart.items_subtotal_price | money_without_trailing_zeros">
-            {{ cart.items_subtotal_price | money_without_trailing_zeros }}
-          </div>
+          <div class="subtotal-value value"></div>
+
         </div>
       
 
@@ -64,6 +63,5 @@
 
   </form>
 </div>
-
 
 {% schema %} { "name": "My Cart" } {% endschema %}
