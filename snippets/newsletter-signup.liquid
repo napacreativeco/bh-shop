@@ -1,9 +1,40 @@
-{% form 'create_customer' %}
-    <span class="errors">
-      {{ form.errors | default_errors }}
-    </span>
-    
-    <input id="email" type="email" name="customer[email]" placeholder="{{ 'stay in touch...' | escape }}" />
-    <input type="submit" value="{{ 'submit' | escape }}" />
+{% form 'customer', class: 'newsletter-form' %}
+  <input type="hidden" name="contact[tags]" value="newsletter">
+
+  <div class="form-container">
+    <input
+      type="email"
+      name="contact[email]"
+      value="{{ form.email }}"
+      aria-required="true"
+      autocorrect="off"
+      autocapitalize="off"
+      autocomplete="email"
+      {% if form.errors %}
+        autofocus
+        aria-invalid="true"
+      {% elsif form.posted_successfully? %}
+        aria-success="true"
+      {% endif %}
+      placeholder="{{ 'stay in touch...' | downcase | escape }}"
+      required
+    >
+    <button type="submit" name="commit">
+      {{ 'submit' | downcase | escape }}
+    </button>
+  </div>
+
+  {%- if form.errors -%}
+    <div class="errors">
+      {{ 'error' | escape }}
+    </div>
+  {%- endif -%}
+
+  {%- if form.posted_successfully? -%}
+    <div class="success">
+      {{ 'success' | escape }}
+    </div>
+  {%- endif -%}
+
 {% endform %}
   
