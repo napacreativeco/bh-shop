@@ -62,6 +62,10 @@ footer {
                         font-weight: 400;
                         color: var(--black);
                     }
+
+                    input[type="email"]::placeholder {
+                        color: var(--black);
+                    }
     
                     input[type="submit"] {
                         height: 100%;
