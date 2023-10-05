@@ -86,8 +86,9 @@
                 .total,
                 .tax,
                 .subtotal {
-                    padding: 6px;
+                    padding: 10px;
                     border: var(--border-black);
+                    font-size: 12px;
                 }
 
                 .go-to-checkout {
