@@ -28,7 +28,7 @@
         <div class="label">
           {{ 'Total' | upcase | escape }}
         </div>
-        <div class="value" data-ajax-cart-bind-state="cart.total_price">
+        <div class="value" data-ajax-cart-bind-state="cart.total_price | money_without_trailing_zeros">
             {{ cart.total_price | money_without_trailing_zeros }}
         </div>
       </div>
@@ -51,7 +51,7 @@
           <div class="label">
             {{ 'Subtotal' | upcase | escape }}
           </div>
-          <div class="value" data-ajax-cart-bind-state="cart.items_subtotal_price">
+          <div class="value" data-ajax-cart-bind-state="cart.items_subtotal_price | money_without_trailing_zeros">
             {{ cart.items_subtotal_price | money_without_trailing_zeros }}
           </div>
         </div>
