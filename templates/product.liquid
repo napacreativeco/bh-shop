@@ -17,7 +17,7 @@
 {% endif %}   
 
 <meta itemprop="url" content="{{ shop.url }}{{ product.url }}" />
-<meta itemprop="image" content="{{ product | img_url: 'grande' }}" />
+<meta itemprop="image" content="{{ product | image_url: width: 1200 }}" />
 
 <div class="single-product" itemscope itemtype="http://schema.org/Product">
   
@@ -45,9 +45,7 @@
     <div class="data">
 
       <div class="limited-indicator">
-        {% if product.metafields.custom.limited_indicator.value == false or product.metafields.custom.limited_indicator.value == blank %}
-
-        {% else %}
+        {% if product.metafields.custom.limited_indicator.value != false or product.metafields.custom.limited_indicator.value != blank %}
           <span>
             {{ 'Limited Edition' | escape }}
           </span>
@@ -89,22 +87,6 @@
       </div>
 
     </div>
-      
-
-    {% if collection %}
-      {% if collection.previous_product or collection.next_product %}
-      <div>     
-      {% if collection.previous_product %}
-        {% capture prev_url %}{{ collection.previous_product}}#content{% endcapture %}
-        <span class="left">{{ 'Previous Product' | link_to: prev_url }}</span>
-      {% endif %}
-      {% if collection.next_product %}
-        {% capture next_url %}{{ collection.next_product}}#content{% endcapture %}
-        <span class="right">{{ 'Next Product' | link_to: next_url }}</span>
-      {% endif %}
-      </div>
-      {% endif %}
-    {% endif %}
 
   </form>
 
