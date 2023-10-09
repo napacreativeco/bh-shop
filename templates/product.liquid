@@ -29,7 +29,7 @@
         <div class="swiper-wrapper">
 
           {% for image in product.images %}
-            <div class="swiper-slide" style="background: url('{{ image | img_url: 'large' }}'); background-size: cover; background-position: center center;">
+            <div class="swiper-slide" style="background: url('{{ image | image_url: width: 1200 }}'); background-size: cover; background-position: center center;">
               {% comment %} <img src="{{ image | img_url: 'large' }}" alt="{{ image.alt | escape }}" /> {% endcomment %}
             </div>
           {% endfor %}

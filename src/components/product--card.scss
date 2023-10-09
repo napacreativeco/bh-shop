@@ -2,7 +2,9 @@
     display: grid;
     grid-template-rows: 1fr auto;
     cursor: pointer;
-    height: 75svh;
+    //height: 75svh;
+    width: 100%;
+    
 
     .image {
         overflow: hidden;
@@ -11,12 +13,15 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        aspect-ratio: 4/5;
+        //aspect-ratio: 4/5;
 
         img {
             object-fit: cover;
             object-position: center center;
             height: 100%;
             min-width: 100%;
+            
         }
     }
 
@@ -75,8 +80,9 @@
 @media screen and (max-width: 767px) {
 
     .product-card {
-        height: calc(100svh - 150px);
-
+        //height: calc(100svh - 150px);
+        aspect-ratio: 4/5;
+        
         .data {
             margin-right: 0px;
             font-size: 15px;

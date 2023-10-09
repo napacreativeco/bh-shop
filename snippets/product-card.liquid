@@ -8,7 +8,19 @@
 <li class="product-card {% unless product.available %} sold-out{% endunless %}{% if on_sale %} on-sale{% endif %}">
 
   <div class="image" onclick="window.location='{{ product.url | within: collection }}';">
-    <img src="{{ product | img_url: 'grande' }}" alt="{{ product.featured_image.alt | escape }}" />
+    {% if product.featured_image %}
+      <img 
+        class="product-card-image"
+        src="{{ product.featured_image | image_url: width: 900 }}" 
+        data-first="{{ product.images[0] | image_url: width: 900 }}"
+        {% if product.images[1] %}
+            data-second="{{ product.images[1] | image_url: width: 900 }}"
+        {% endif %}
+        alt="{{ product.featured_image.alt | escape }}"
+      />
+    {% else %}
+        {{ 'image' | placeholder_svg_tag }}
+    {% endif %}
   </div>
   
   <div class="data">
@@ -46,3 +58,16 @@
   </div>
   
 </li>
+
+<script>
+  $('.product-card-image').on('mouseenter', function() {
+    if ( $(this).attr('data-second') ) { 
+      $(this).attr('src', $(this).attr('data-second'));
+    }
+  });
+  $('.product-card-image').on('mouseleave', function() {
+    if ( $(this).attr('data-second') ) {
+      $(this).attr('src', $(this).attr('data-first'));
+    }
+  });
+</script>
