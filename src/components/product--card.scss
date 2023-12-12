@@ -49,8 +49,18 @@
 }
 
 .product-card:hover {
-    a {
-        text-decoration: underline;
+    .title {
+        a {
+            text-decoration: underline;
+        }
+    }
+    .type {
+        a {
+            opacity: 0.7;
+        }
+    }
+    .price {
+        opacity: 0.7;
     }
 }
 
