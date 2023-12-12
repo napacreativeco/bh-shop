@@ -11,21 +11,9 @@
           "cart_icon": "shopify:\/\/shop_images\/cart-icon.svg"
         }
       },
-      "cart": {
-        "type": "cart",
-        "settings": {
-        }
-      },
       "footer": {
         "type": "footer",
         "blocks": {
-          "17977ef0-32bb-4593-81ab-f4cc60d0ae3d": {
-            "type": "footer_social_links",
-            "settings": {
-              "social_network_title": "Twitter",
-              "social_network_url": "https:\/\/www.twitter.com\/bighousedot"
-            }
-          },
           "b69b35ea-8cf0-42ed-98bc-845870d3075f": {
             "type": "footer_social_links",
             "settings": {
@@ -35,12 +23,16 @@
           }
         },
         "block_order": [
-          "17977ef0-32bb-4593-81ab-f4cc60d0ae3d",
           "b69b35ea-8cf0-42ed-98bc-845870d3075f"
         ],
         "settings": {
           "footer_logo": "shopify:\/\/shop_images\/bighouse-logo.svg",
           "footer_tagline": "for equity, parity, and creativity."
+        }
+      },
+      "cart-drawer": {
+        "type": "cart-drawer",
+        "settings": {
         }
       }
     },
