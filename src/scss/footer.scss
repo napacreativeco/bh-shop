@@ -2,7 +2,7 @@ footer {
     font-size: 1rem;
     
     .footer-wrapper {
-        padding: 20px var(--side-padding) 15px var(--side-padding);
+        padding: 10px var(--side-padding) 15px var(--side-padding);
 
         .top-row {
             display: grid;
@@ -10,6 +10,7 @@ footer {
             grid-gap: 20px;
             align-items: center;
             font-size: 12px;
+            padding: 10px 0 0 0;
 
             .left {
                 width: 100%;
@@ -21,9 +22,9 @@ footer {
                     list-style: none;
                     margin: 0;
                     padding: 0;
-                    display: grid;
-                    grid-template-columns: 1fr 1fr;
-                    align-items: flex-end;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-end;
                     gap: 12px;
     
                     a {
@@ -99,7 +100,7 @@ footer {
         }
 
         .bottom-row {
-            padding-top: 10px;
+            padding-top: 0px;
 
             img {
                 width: 100%;

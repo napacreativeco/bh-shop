@@ -67,7 +67,7 @@
   </script>
   
   <script type="module">
-    import '{{ "liquid-ajax-cart-v1.11.0.js" | asset_url }}';
+    import '{{ "liquid-ajax-cart-v1.11.2.js" | asset_url }}';
   </script>
 
   <script type="application/json" data-ajax-cart-configuration >
@@ -77,8 +77,14 @@
   </script>
 
   {{ 'format_money.js' | asset_url | script_tag }}
+
+  {% comment %} 
+  *
+  * State Update
+  *
+  {% endcomment %}
   <script type="module">
-    import { subscribeToCartStateUpdate } from '{{ "liquid-ajax-cart-v1.11.0.js" | asset_url }}'
+    import { subscribeToCartStateUpdate } from '{{ "liquid-ajax-cart-v1.11.2.js" | asset_url }}'
 
 
     let USDollar = new Intl.NumberFormat('en-US', {
@@ -88,11 +94,36 @@
     });
 
     subscribeToCartStateUpdate(( state, isCartUpdated ) => {
+      console.log('state updated');
+
       var total = Shopify.formatMoney(state.cart.total_price);
       var subtotal = Shopify.formatMoney(state.cart.items_subtotal_price);
-      $('.total-value').text(total.substring(0, subtotal.length - 3));
+      //$('.total-value').text(total.substring(0, subtotal.length - 3));
       $('.subtotal-value').text(subtotal.substring(0, subtotal.length - 3));
     });
+  </script>
+
+  {% comment %} 
+  *
+  * Ajax Requests
+  *
+  {% endcomment %}
+  <script type="module">
+    import { subscribeToCartAjaxRequests } from '{{ "liquid-ajax-cart-v1.11.2.js" | asset_url }}'
+
+    function myRequestCallback ( requestState, subscribeToResult ) {
+      console.log( 'Before request', requestState );
+      
+      const myResultCallback = function ( requestState ) {
+        console.log( 'After request', requestState );
+        console.log(requestState.responseData.body.item_count);
+        var total = requestState.responseData.body.total_price / 100;
+        $('.total-value').html('$' + total);
+      }
+      
+      subscribeToResult( myResultCallback );
+    }
+    subscribeToCartAjaxRequests( myRequestCallback );
   </script>
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
