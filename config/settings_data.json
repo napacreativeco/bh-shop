@@ -48,6 +48,15 @@
           "about_heading": "About us",
           "about_body": "<p>bighouse is a global collective of creators, builders, designers, developers and artists.<\/p><p>an incubator of creativity, a means of economy, and a showcase of innovation.<\/p><p>we bridge the gap between commerce and culture. connecting seemingly disparate worlds in unique and unexpected ways.<\/p><p>new paradigms appear at the fringes slowely at first; then, all at once.<\/p>"
         }
+      },
+      "clients": {
+        "type": "clients",
+        "settings": {
+          "clients_heading": "We Work With",
+          "clients_body": "<p>Legendary Pictures<\/p><p>Konami<\/p><p>Online Ceramics<\/p><p>Pabst Blue Ribbon<\/p><p>Topo Chico<\/p><p>Pleasures<\/p><p>Starz<\/p>",
+          "clients_body_two": "<p>Lionsgate<\/p><p>Nautilus<\/p><p>Arrowhead<\/p><p>Bandai Namco<\/p><p>Warner Music Group<\/p><p>Sesame Street<\/p><p>T-Pain<\/p>",
+          "clients_body_three": "<p>Wack Mario<\/p><p>Texas Chainsaw Massacre<\/p><p>Smirnoff<\/p><p>Marc Jacobs<\/p><p>Universal<\/p><p>NPR<\/p>"
+        }
       }
     },
     "content_for_index": [
