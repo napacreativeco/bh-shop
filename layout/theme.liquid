@@ -48,20 +48,34 @@
 
   <style>
     @font-face {
-        font-family: 'Druk';
-        src: url('{{ "Druk-Medium.woff2" | asset_url }}') format('woff2'),
-            url('{{ "Druk-Medium.woff" | asset_url }}') format('woff');
-        font-weight: 500;
-        font-style: normal;
-        font-display: swap;
+      font-family: 'Druk';
+      src: url('{{ "Druk-Medium.woff2" | asset_url }}') format('woff2'),
+          url('{{ "Druk-Medium.woff" | asset_url }}') format('woff');
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap;
     }
+
+    @font-face {
+      font-family: 'ABC';
+      src: url('{{ "ABCMonumentGrotesk-Regular.woff2" | asset_url }}') format('woff2'),
+          url('{{ "ABCMonumentGrotesk-Regular.woff" | asset_url }}') format('woff');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
   </style>
 
 </head>
 
 <body id="{{ page_title | handle }}" class="{% if customer %}customer-logged-in {% endif %}template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}" >
   
-  {% section 'navbar' %}
+  {% if template.name == 'index' %}
+    {% render 'navbar--home' %}
+  {% else %}
+    {% section 'navbar' %}
+  {% endif %}
 
   <div class="my-floating-cart">
     {% section 'cart-drawer' %}

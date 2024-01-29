@@ -1,0 +1,86 @@
+.navbar-home {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+
+    .open-navbar-overlay {
+        font-size: 52px;
+        line-height: 1;
+        display: block;
+        cursor: pointer;   
+    }
+
+    svg {
+        width: 50px;
+        height: 50px;
+
+        line {
+            stroke: var(--white);
+        }
+    }
+
+    .navbar-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        transform: translateY(-100%);
+        z-index: 999;
+        color: var(--black);
+        text-transform: lowercase;
+        transition: all 0.23s ease-in-out;
+
+        .wrap {
+            background: var(--white);
+        }
+
+        ul {
+            li {
+                padding: 10px;
+                border-bottom: var(--border-black);
+
+                a {
+                    font-size: 20px;
+                    letter-spacing: -0.5px;
+                    text-decoration: none;
+                }
+
+                a:hover {
+                    text-decoration: none;
+                }
+            }
+        }
+
+        li span.arrow {
+            transition: all 0.12s ease-in-out;
+        }
+
+        .contact {
+            padding: 10px 80px 10px 10px;
+        }
+
+        a {
+            display: block;
+            font-size: 12px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .close-navbar-overlay {
+            padding: 4px 0 4px 4px;
+            display: block;
+            color: var(--white);
+            text-align: right;
+            font-size: 10px;
+            cursor: pointer;
+        }
+
+        li:hover span.arrow {
+            padding-left: 4px;
+        }
+
+    }
+
+}

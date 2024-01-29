@@ -1,42 +1,54 @@
-<div class="footer-wrapper">
+{% if template.name == 'index' %}
 
-  <div class="bottom-row">
-    <a href="/" title="{{ shop.name }}">
-      {% if section.settings.footer_logo == empty %}
-        <img src="{{ 'bighouse-logo.svg' | asset_url }}" alt="{{ site.title }}" />
-      {% else %}
-        <img src="{{ section.settings.footer_logo | image_url }}" alt="{{ site.title }}" />
-      {% endif %}
-    </a>
+  <div class="footer-home">
+    {% render 'newsletter-signup', is_home: true %}
   </div>
 
-  <div class="top-row">
+{% else %}
 
-    <div class="left">
+  <div class="footer-wrapper">
 
-      <div class="tagline">
-        <p>{{ section.settings.footer_tagline }}</p>
+    {% comment %}  
+    <div class="bottom-row">
+      <a href="/" title="{{ shop.name }}">
+        {% if section.settings.footer_logo == empty %}
+          <img src="{{ 'bighouse-logo.svg' | asset_url }}" alt="{{ site.title }}" />
+        {% else %}
+          <img src="{{ section.settings.footer_logo | image_url }}" alt="{{ site.title }}" />
+        {% endif %}
+      </a>
+    </div>
+    {% endcomment %}
+
+    <div class="top-row">
+
+      <div class="left">
+
+        <div class="tagline">
+          <p>{{ section.settings.footer_tagline }}</p>
+        </div>
+
+        <ul class="social-media">
+          {% for block in section.blocks %}
+            <li {{ block.shopify_attributes }}>
+              <a href="{{ block.settings.social_network_url }}" title="{{ block.settings.social_network_title }}">
+                {{ block.settings.social_network_title }}
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+
       </div>
 
-      <ul class="social-media">
-        {% for block in section.blocks %}
-          <li {{ block.shopify_attributes }}>
-            <a href="{{ block.settings.social_network_url }}" title="{{ block.settings.social_network_title }}">
-              {{ block.settings.social_network_title }}
-            </a>
-          </li>
-        {% endfor %}
-      </ul>
+      <div class="right newsletter">
+        {% render 'newsletter-signup', is_home: false %}
+      </div>
 
-    </div>
-
-    <div class="right newsletter">
-      {% render 'newsletter-signup' %}
     </div>
 
   </div>
 
-</div>
+{% endif %}
 
 {% schema %}
   {

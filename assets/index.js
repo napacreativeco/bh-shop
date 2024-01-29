@@ -7,4 +7,13 @@
     $('.close-drawer').on('click', function() {
         $('body').removeClass('js-my-cart-open');
     });
+
+
+    $('.open-navbar-overlay').on('click', function() {
+        $('.navbar-overlay').css('transform', 'translateY(0%)');
+    });
+
+    $('.close-navbar-overlay').on('click', function() {
+        $('.navbar-overlay').css('transform', 'translateY(-100%)');
+    });
 })(jQuery);

@@ -1,0 +1,23 @@
+section.section {
+    border-top: var(--big-border);
+    padding: 40px var(--side-padding);
+
+    .wrap {
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        grid-gap: 80px;
+    }
+
+    h2 {
+        font-family: var(--heading) !important;
+        text-transform: uppercase;
+        font-size: 62px;
+        font-weight: 100;
+        white-space: nowrap;
+    }
+
+    p {
+        line-height: 1.2;
+    }
+
+}

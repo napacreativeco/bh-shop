@@ -1,1 +1,1 @@
-section.about{border-top:var(--big-border);border-bottom:var(--big-border);padding:40px var(--side-padding)}section.about .wrap{display:grid;grid-template-columns:1fr 4fr;grid-gap:80px}section.about h2{font-family:var(--heading)!important;text-transform:uppercase;font-size:62px;font-weight:100;white-space:nowrap}section.about p{margin:0 0 10px 0;line-height:1.2}
+section.about p{margin:0 0 10px 0}
