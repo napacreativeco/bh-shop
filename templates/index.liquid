@@ -1,8 +1,17 @@
-{{ 'collection--default.css' | asset_url | stylesheet_tag }}
-{{ 'product--card.css' | asset_url | stylesheet_tag }}
 
+<div class="homepage">
+  {% section 'hero' %}
+</div>
+
+
+
+
+{% comment %}  
 <ul class="products-grid">
+
   {% for product in collections.frontpage.products %}
     {% render 'product-card' product: product %}
   {% endfor %}
+
 </ul>
+{% endcomment %}
