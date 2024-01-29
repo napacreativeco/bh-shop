@@ -34,6 +34,13 @@
         "type": "cart-drawer",
         "settings": {
         }
+      },
+      "hero": {
+        "type": "hero",
+        "settings": {
+          "hero_video_desktop": "shopify:\/\/files\/videos\/Horizontal Reel Bighouse (1).mp4",
+          "hero_video_mobile": "shopify:\/\/files\/videos\/Big House Reel 23 Vertical.mp4"
+        }
       }
     },
     "content_for_index": [
