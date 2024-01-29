@@ -1,0 +1,52 @@
+{{ 'component--clients.css' | asset_url | stylesheet_tag }}
+
+<div class="wrap">
+
+    <div class="left">
+        <h2>{{ section.settings.clients_heading }}</h2>
+    </div>
+
+    <div class="right">
+        <div class="block">
+            {{ section.settings.clients_body | newline_to_br }}
+        </div>
+        <div class="block">
+            {{ section.settings.clients_body_two | newline_to_br }}
+        </div>
+        <div class="block">
+            {{ section.settings.clients_body_three | newline_to_br }}
+        </div>
+    </div>
+
+</div>
+
+
+{% schema %}
+    {
+      "name": "We Work With",
+      "tag": "section",
+      "class": "clients",
+      "settings": [
+        {
+            "type": "text",
+            "id": "clients_heading",
+            "label": "Heading"
+        },
+        {
+            "type": "richtext",
+            "id": "clients_body",
+            "label": "Body 1"
+        },
+        {
+            "type": "richtext",
+            "id": "clients_body_two",
+            "label": "Body 2"
+        },
+        {
+            "type": "richtext",
+            "id": "clients_body_three",
+            "label": "Body 3"
+        }
+      ]
+    }
+{% endschema %}

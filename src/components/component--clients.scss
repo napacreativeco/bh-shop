@@ -1,4 +1,4 @@
-section.about {
+section.clients {
     border-top: var(--big-border);
     border-bottom: var(--big-border);
     padding: 40px var(--side-padding);
@@ -15,6 +15,11 @@ section.about {
         font-size: 62px;
         font-weight: 100;
         white-space: nowrap;
+    }
+
+    .right {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
     }
 
     p {
