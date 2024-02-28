@@ -44,15 +44,5 @@
         "label": "Facebook"
       }
     ]
-  },
-  {
-    "name": "Footer",
-    "settings": [
-      {
-        "type": "image_picker",
-        "id": "bh_footer_logo",
-        "label": "Footer Logo"
-      }
-    ]
   }
 ]
