@@ -4,7 +4,7 @@
     --white: #fff;
     --black: #000;
 
-    --side-padding: 14px;
+    --side-padding: 30px;
     --border-black: 1px solid var(--black);
     --border-white: 1px solid var(--white);
     --big-border: 8px solid var(--white);
@@ -58,6 +58,7 @@ input {
     color: var(--white); 
 }
 
+@import './preloader.scss';
 @import './navbar--home.scss';
 @import './navbar.scss';
 @import './sections.scss';

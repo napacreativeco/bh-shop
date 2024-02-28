@@ -1,0 +1,18 @@
+<footer class="footer-update">
+    <div class="row">
+        <div class="tagline">
+            {{ settings.bh_tagline }}
+        </div>
+        <div class="link">
+            blank
+        </div>
+        <div class="socials">
+            {% if settings.bh_instagram != empty %}
+                {{ settings.bh_instagram }}
+            {% endif %}
+        </div>
+        <div class="newsletter">
+            {% render 'newsletter-signup', is_home: false %}
+        </div>
+    </div>
+</footer>

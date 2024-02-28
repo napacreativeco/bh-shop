@@ -15,11 +15,43 @@
     ]
   },
   {
-    "name": "Example setting",
+    "name": "Site Info",
     "settings": [
       {
-        "type": "header",
-        "content": "Example option"
+        "type": "text",
+        "id": "website_tagline",
+        "label": "Tagline",
+        "default": "for equity, parity, and creativity."
+      }
+    ]
+  },
+  {
+    "name": "Social Media",
+    "settings": [
+      {
+        "type": "text",
+        "id": "bh_instagram",
+        "label": "Instagram"
+      },
+      {
+        "type": "text",
+        "id": "bh_twitter",
+        "label": "X"
+      },
+      {
+        "type": "text",
+        "id": "bh_facebook",
+        "label": "Facebook"
+      }
+    ]
+  },
+  {
+    "name": "Footer",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "bh_footer_logo",
+        "label": "Footer Logo"
       }
     ]
   }

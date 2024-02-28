@@ -73,6 +73,7 @@
   
   {% if template.name == 'index' %}
     {% render 'navbar--home' %}
+    {% render 'preloader' %}
   {% else %}
     {% section 'navbar' %}
   {% endif %}
@@ -85,7 +86,8 @@
     {{ content_for_layout }}
   </main>
 
-  {% section 'footer' %}
+  {% render 'footer-update' %}
+  {% comment %} {% section 'footer' %} {% endcomment %}
 
   <script type="application/json" data-ajax-cart-initial-state>
     {{ cart | json }}
@@ -168,6 +170,20 @@
 
   {{ 'shop.js'  | asset_url | script_tag }}
   {{ 'index.js' | asset_url | script_tag }}
+
+  <script>
+    var desktopVideo = document.getElementById('desktop-video');
+    var mobileVideo = document.getElementById('mobile-video');
+
+    setTimeout(function() {
+
+      desktopVideo.muted = true;
+      mobileVideo.muted = true;
+      desktopVideo.play();
+      mobileVideo.play();
+
+    }, 5000);
+  </script>
   
 </body>
 
