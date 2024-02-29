@@ -71,8 +71,12 @@
     
     .preloader-overlay {
 
+        svg {
+            overflow: visible;
+        }
+
         path {
-            stroke-width: 4px;
+            stroke-width: 6px;
         }
 
     }
