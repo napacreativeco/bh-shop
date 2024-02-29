@@ -66,3 +66,15 @@
     // }
 
 }
+
+@media screen and (max-width: 767px) {
+    
+    .preloader-overlay {
+
+        path {
+            stroke-width: 4px;
+        }
+
+    }
+
+}
