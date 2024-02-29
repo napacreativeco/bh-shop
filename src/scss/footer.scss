@@ -1,20 +1,43 @@
 .footer-update {
+    //padding: 20px var(--side-padding);
+
     .row {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(4, 25%);
+        //grid-gap: 20px;
         align-items: center;
+        padding: 10px var(--side-padding);
     }
+
+    .form-container {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-gap: 6px;
+    }
+
+    input {
+        background: transparent;
+        border: var(--border-black);
+        padding-left: 4px;
+    }
+
+    button {
+        background: transparent;
+        border: var(--border-black);
+    }
+
 }
 
 .footer-home {
-    padding: 20px var(--side-padding);
+    //padding: 20px var(--side-padding);
     
     .form-container {
         display: flex;
         flex-direction: row;
         align-items: stretch;
         justify-content: flex-end;
-        gap: 12px;
+        gap: 10px;
+        
     }
 
     button {

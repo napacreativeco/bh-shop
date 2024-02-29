@@ -1,14 +1,14 @@
 <footer class="footer-update">
     <div class="row">
         <div class="tagline">
-            {{ settings.bh_tagline }}
+            {{ settings.website_tagline }}
         </div>
         <div class="link">
-            blank
+            {{ 'bh for brands' |  link_to: '/collections/all' }}
         </div>
         <div class="socials">
             {% if settings.bh_instagram != empty %}
-                {{ settings.bh_instagram }}
+                <a href="{{ settings.bh_instagram }}" title="Instagram">Instagram</a>
             {% endif %}
         </div>
         <div class="newsletter">
