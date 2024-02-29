@@ -16,3 +16,16 @@ section.clients {
     }
 
 }
+
+@media screen and (max-width: 767px) {
+    
+    section.clients {
+        border-bottom: 0px;
+
+        .right {
+            grid-template-columns: 1fr;
+        }
+        
+    }
+
+}

@@ -28,6 +28,10 @@
         text-transform: lowercase;
     }
 
+    input::placeholder {
+        color: var(--white);
+    }
+
     button {
         font-size: 14px;
         text-transform: lowercase;
@@ -188,6 +192,40 @@
 ----------------------------------------------------------------
 */
 @media screen and (max-width: 767px) {
+
+    .footer-update {
+
+        .row {
+            grid-template-columns: 1fr;
+        }
+
+        .tagline {
+            display: none;
+        }
+
+        .link {
+            display: none;
+        }
+
+        .socials {
+            display: none;
+        }
+
+        .form-container {
+            grid-template-columns: 1fr;
+        }
+
+        input {
+            font-size: 26px;
+        }
+
+        button {
+            font-size: 26px;
+        }
+
+    }
+
+    /*
     footer {
         .footer-wrapper {
 
@@ -209,4 +247,6 @@
 
         }
     }
+    */
+
 }

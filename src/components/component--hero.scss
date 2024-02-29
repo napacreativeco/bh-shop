@@ -22,8 +22,17 @@ section.hero {
 @media screen and (max-width: 767px) {
     
     section.hero {
+        overflow: hidden;
+        height: 100svh;
+        width: 100vw;
+        
         .desktop { display: none; }
         .mobile { display: block; }
+
+        video {
+            height: 100svh;
+            width: auto;
+        }
     }
 
 }

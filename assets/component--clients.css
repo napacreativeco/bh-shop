@@ -1,1 +1,1 @@
-section.clients{border-bottom:var(--big-border)}section.clients .right{display:grid;grid-template-columns:repeat(3,33.33%)}section.clients h2{white-space:wrap}section.clients p{margin:0}
+section.clients{border-bottom:var(--big-border)}section.clients .right{display:grid;grid-template-columns:repeat(3,33.33%)}section.clients h2{white-space:wrap}section.clients p{margin:0}@media screen and (max-width:767px){section.clients{border-bottom:0}section.clients .right{grid-template-columns:1fr}}

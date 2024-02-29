@@ -36,12 +36,13 @@
         }
 
         ul {
+
             li {
                 padding: 10px;
                 border-bottom: var(--border-black);
 
                 a {
-                    font-size: 20px;
+                    font-size: 26px;
                     letter-spacing: -0.5px;
                     text-decoration: none;
                 }
@@ -50,23 +51,29 @@
                     text-decoration: none;
                 }
             }
-        }
 
-        li span.arrow {
-            transition: all 0.12s ease-in-out;
+            li span.arrow {
+                transition: all 0.12s ease-in-out;
+            }
+    
+            li:hover span.arrow {
+                padding-left: 4px;
+            }
+
         }
 
         .contact {
             padding: 10px 80px 10px 10px;
-        }
 
-        a {
-            display: block;
-            font-size: 12px;
-        }
+            a {
+                display: block;
+                font-size: 12px;
+            }
+    
+            a:hover {
+                text-decoration: underline;
+            }
 
-        a:hover {
-            text-decoration: underline;
         }
 
         .close-navbar-overlay {
@@ -74,12 +81,64 @@
             display: block;
             color: var(--white);
             text-align: right;
-            font-size: 10px;
+            font-size: 14px;
             cursor: pointer;
         }
 
-        li:hover span.arrow {
-            padding-left: 4px;
+    }
+
+}
+
+@media screen and (max-width: 767px) {
+    
+    .navbar-home {
+        top: auto;
+        left: auto;
+        bottom: 30px;
+        right: 30px;
+
+        .navbar-overlay {
+            top: auto;
+            bottom: 0;
+            width: 100%;
+            display: flex;
+            flex-direction: column-reverse;
+
+            ul {
+                li {
+                    padding: 10px;
+                    border-bottom: var(--border-black);
+    
+                    a {
+                        font-size: 26px;
+                        letter-spacing: -1px;
+                    }
+                }
+            }
+    
+            .contact {
+                padding: 10px 80px 10px 10px;
+    
+                a {
+                    display: block;
+                    font-size: 16px;
+                }
+        
+                a:hover {
+                    text-decoration: underline;
+                }
+    
+            }
+
+            .close-navbar-overlay {
+                padding: 0px 10px 10px 0px;
+                display: block;
+                color: var(--white);
+                text-align: right;
+                font-size: 16px;
+                cursor: pointer;
+            }
+
         }
 
     }

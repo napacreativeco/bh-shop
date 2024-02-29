@@ -23,3 +23,28 @@ section.section {
     }
 
 }
+
+
+@media screen and (max-width: 767px) {
+
+    section.section {
+        border-top: 0px;
+        padding: 0 0 20px 0;
+
+        .wrap {
+            grid-template-columns: 1fr;
+            padding: var(--side-padding) 0 0 0;
+        }
+
+        .left {
+            border-bottom: var(--big-border);
+            padding: 0 var(--side-padding) var(--side-padding);
+        }
+
+        .right {
+            padding: var(--side-padding);
+        }
+
+    }
+    
+}
