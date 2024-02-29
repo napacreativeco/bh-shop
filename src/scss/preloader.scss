@@ -5,13 +5,12 @@
     bottom: 0;
     left: 0;
     z-index: 999;
-    //transform: translate(-50%, -50%);
     display: flex;
     justify-content: center;
     align-items: center;
     background: var(--black);
-    animation: dipper 1ms linear forwards;
-    animation-delay: 6s;
+    //animation: dipper 1ms linear forwards;
+    //animation-delay: 6s;
       
     svg {
         width: 100%;
@@ -41,7 +40,7 @@
         width: 0%;
         height: 100%;
         position: absolute;
-        animation: filler 3s linear forwards;
+        animation: filler 2.5s linear forwards;
         animation-delay: 2s;
         z-index: 1;
         top: 0;
@@ -49,7 +48,8 @@
         bottom: 0;
         left: 0;
     }
-      
+
+
     @keyframes filler {
         0% { width: 0%; }
         100% { width: 100%; }
@@ -60,9 +60,9 @@
         100% { opacity: 1; }
     }
 
-    @keyframes dipper {
-        0% { display: flex; }
-        100% { display: none; }
-    }
+    // @keyframes dipper {
+    //     0% { display: flex; }
+    //     100% { display: none; }
+    // }
 
 }

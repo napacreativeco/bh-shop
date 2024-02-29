@@ -16,4 +16,15 @@
     $('.close-navbar-overlay').on('click', function() {
         $('.navbar-overlay').css('transform', 'translateX(-100%)');
     });
+
+    $(document).on('ready', function() {
+
+        setTimeout(function() {
+
+            $('.preloader-overlay').fadeOut();
+
+        }, 5000);
+
+    });
+
 })(jQuery);
