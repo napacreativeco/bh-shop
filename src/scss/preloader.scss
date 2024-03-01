@@ -17,11 +17,13 @@
         fill: transparent;
         position: relative;
         z-index: 5;
+        overflow: visible;
     }
       
     path {
         stroke: white;
         stroke-width: 2px;
+        overflow: visible;
     }
       
     .logo {
