@@ -3,7 +3,9 @@
 <div class="wrap">
 
     <div class="desktop">
+        
         {{ section.settings.hero_video_desktop | video_tag: autoplay: false, loop: true | replace: '<video', '<video id="desktop-video" ' }}
+        
         {% render 'big-logo-outline' %}
 
         <div class="scroll-arrow">
@@ -13,7 +15,15 @@
     </div>
 
     <div class="mobile">
+
         {{ section.settings.hero_video_mobile | video_tag: autoplay: false, loop: true | replace: '<video', '<video id="mobile-video" ' }}
+        
+        {% render 'big-logo-outline' %}
+
+        <div class="scroll-arrow">
+            <a href="#clients-section">{% render 'icon--arrow-down' %}</a>
+        </div>
+
     </div>
 
 </div>
