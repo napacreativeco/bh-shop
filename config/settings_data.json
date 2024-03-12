@@ -54,9 +54,9 @@
         "type": "clients",
         "settings": {
           "clients_heading": "We Work With",
-          "clients_body": "<p>Legendary Pictures<\/p><p>Konami<\/p><p>Online Ceramics<\/p><p>Pabst Blue Ribbon<\/p><p>Topo Chico<\/p><p>Pleasures<\/p><p>Starz<\/p>",
-          "clients_body_two": "<p>Lionsgate<\/p><p>Nautilus<\/p><p>Arrowhead<\/p><p>Bandai Namco<\/p><p>Warner Music Group<\/p><p>Sesame Street<\/p><p>T-Pain<\/p>",
-          "clients_body_three": "<p>Wack Mario<\/p><p>Texas Chainsaw Massacre<\/p><p>Smirnoff<\/p><p>Marc Jacobs<\/p><p>Universal<\/p><p>NPR<\/p>"
+          "clients_body": "<p>Pabst Blue Ribbon<\/p><p>Online Ceramics<\/p><p>STARZ<\/p><p>Pleasures<\/p><p>T-Pain<\/p><p>Wacko Maria<\/p><p>Arrowhead<\/p>",
+          "clients_body_two": "<p>Ground Control Touring<\/p><p>UNIFIED Music Group<\/p><p>New Era<\/p><p>Legendary Pictures<\/p><p>Lionsgate<\/p><p>Nautilus Magazine<\/p>",
+          "clients_body_three": "<p>Bandai Namco<\/p><p>Warner Music Group<\/p><p>Sesame Street<\/p><p>Smirnoff<\/p><p>Marc Jacobs<\/p><p>Universal<\/p><p>NPR<\/p>"
         }
       }
     },
