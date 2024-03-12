@@ -27,6 +27,7 @@
         left: 0;
         transform: translateX(-100%);
         z-index: 999;
+        min-width: 30vw;
         color: var(--black);
         text-transform: lowercase;
         transition: all 0.23s ease-in-out;

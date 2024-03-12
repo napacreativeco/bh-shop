@@ -4,6 +4,12 @@
 
     <div class="desktop">
         {{ section.settings.hero_video_desktop | video_tag: autoplay: false, loop: true | replace: '<video', '<video id="desktop-video" ' }}
+        {% render 'big-logo-outline' %}
+
+        <div class="scroll-arrow">
+            <a href="#clients-section">{% render 'icon--arrow-down' %}</a>
+        </div>
+
     </div>
 
     <div class="mobile">

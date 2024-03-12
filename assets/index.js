@@ -17,6 +17,11 @@
         $('.navbar-overlay').css('transform', 'translateX(-100%)');
     });
 
+    /*
+    *
+    * On Ready
+    * 
+    */
     $(document).on('ready', function() {
 
         setTimeout(function() {
@@ -24,6 +29,7 @@
             $('.preloader-overlay').fadeOut();
 
         }, 5000);
+        
 
     });
 

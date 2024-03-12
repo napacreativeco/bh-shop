@@ -7,8 +7,9 @@
     <div class="navbar-overlay">
         <div class="wrap">
             <ul>
-                <li><a href="">Bighouse For Brands <span class="arrow">&rarr;</span></a></li>
-                <li><a href="">store <span class="arrow">&rarr;</span></a></li>
+                {% for link in linklists.home-menu.links %}
+                    <li><a href="{{ link.url }}">{{ link.title }} <span class="arrow">&rarr;</span></a></li>
+                {% endfor %}
             </ul>
             <div class="contact">
                 <a href="mailto:connect@thisbighouse.xyz" title="Email">connect@thisbighouse.xyz</a>

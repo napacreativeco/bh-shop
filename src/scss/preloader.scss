@@ -9,8 +9,6 @@
     justify-content: center;
     align-items: center;
     background: var(--black);
-    //animation: dipper 1ms linear forwards;
-    //animation-delay: 6s;
       
     svg {
         width: 100%;
@@ -21,7 +19,6 @@
     }
       
     path {
-        //stroke: white;
         stroke-width: 0px;
         outline: 2px solid white;
         overflow: visible;
@@ -53,7 +50,6 @@
         left: 0;
     }
 
-
     @keyframes filler {
         0% { width: 0%; }
         100% { width: 100%; }
@@ -64,11 +60,12 @@
         100% { opacity: 1; }
     }
 
-    // @keyframes dipper {
-    //     0% { display: flex; }
-    //     100% { display: none; }
-    // }
+}
 
+body[data-visited="true"] {
+    .preloader-overlay {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 767px) {

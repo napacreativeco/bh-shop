@@ -67,6 +67,45 @@
 
   </style>
 
+  <script type="module">
+    var visited = localStorage.getItem("visited");
+    var loader = document.getElementById("preloader");
+    var desktopVideo = document.getElementById('desktop-video');
+    var mobileVideo = document.getElementById('mobile-video');
+  
+    document.onload = preLoader();
+
+    function preLoader() {
+
+      if (visited == null) {
+
+        // COOKIE NOT SET
+        localStorage.setItem("visited", "true");
+        
+        setTimeout(function() {
+
+          desktopVideo.muted = true;
+          mobileVideo.muted = true;
+          desktopVideo.play();
+          mobileVideo.play();
+
+        }, 5000);
+
+      } else {
+
+        // COOKIE IS SET
+        document.querySelector('body').setAttribute('data-visited', localStorage.getItem("visited"));
+        desktopVideo.muted = true;
+        mobileVideo.muted = true;
+        desktopVideo.play();
+        mobileVideo.play();
+
+      }
+
+    }
+    console.log("visited: " + visited);
+  </script>
+
 </head>
 
 <body id="{{ page_title | handle }}" class="{% if customer %}customer-logged-in {% endif %}template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}" >
@@ -171,20 +210,6 @@
 
   {{ 'shop.js'  | asset_url | script_tag }}
   {{ 'index.js' | asset_url | script_tag }}
-
-  <script>
-    var desktopVideo = document.getElementById('desktop-video');
-    var mobileVideo = document.getElementById('mobile-video');
-
-    setTimeout(function() {
-
-      desktopVideo.muted = true;
-      mobileVideo.muted = true;
-      desktopVideo.play();
-      mobileVideo.play();
-
-    }, 5000);
-  </script>
   
 </body>
 
