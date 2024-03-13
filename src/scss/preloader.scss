@@ -10,7 +10,7 @@
     align-items: center;
     background: var(--black);
       
-    .logo {
+    #big-logo-outline {
         width: 70vw;
         position: relative;
         mask-repeat: no-repeat;
@@ -20,7 +20,7 @@
         opacity: 0;
     }
       
-    .logo::before {
+    #big-logo-outline::before {
         content: '';
         background: white;
         width: 0%;
