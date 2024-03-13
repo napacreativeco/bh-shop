@@ -89,7 +89,12 @@
                margin: 0 0 0px 0;
                line-height: 1.5;
                font-weight: normal !important;
-               font-family: var(--body);
+               font-family: var(--body) !important;
+
+               li {
+                font-weight: normal !important;
+                font-family: var(--body) !important;
+               }
             }
 
             .variants {
