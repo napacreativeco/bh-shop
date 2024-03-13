@@ -172,7 +172,7 @@
 @media screen and (max-width: 767px) {
     .single-product {
         --padding-added: calc(var(--side-padding) * 2);
-        border-bottom: var(--border-black);
+        //border-bottom: var(--border-black);
         margin-bottom: 10px;
 
         form {
