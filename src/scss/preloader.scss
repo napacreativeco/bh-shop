@@ -43,6 +43,11 @@
         overflow: visible;
     }
 
+    #big-logo-outline {
+        position: absolute;
+        z-index: 6;
+    }
+
 
     @keyframes filler {
         0% { width: 0%; }
