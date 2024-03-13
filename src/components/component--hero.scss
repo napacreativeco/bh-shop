@@ -29,21 +29,7 @@ section.hero {
     .mobile {
         display: none;
         position: relative;
-
-        .scroll-arrow {
-            position: absolute;
-            bottom: 30px;
-            left: 30px;
-            cursor: pointer;
-    
-            svg {
-                width: 30px;
-                height: 30px;
-            }
-        }
     }
-
-
 
     #big-logo-outline {
         //stroke: var(--white);
@@ -57,22 +43,19 @@ section.hero {
         overflow: visible;
     }
 
-
 }
 
 @media screen and (max-width: 767px) {
     
     section.hero {
         overflow: hidden;
-        height: 100svh;
-        width: 100vw;
-        
+
         .desktop { display: none; }
         .mobile { display: block; }
 
         video {
-            height: 100svh;
-            width: auto;
+            //height: 100svh !important;
+            //min-width: 100vw;
         }
     }
 

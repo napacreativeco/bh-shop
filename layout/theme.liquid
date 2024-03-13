@@ -72,8 +72,12 @@
     var loader = document.getElementById("preloader");
     var desktopVideo = document.getElementById('desktop-video');
     var mobileVideo = document.getElementById('mobile-video');
+    desktopVideo.muted = true;
+    mobileVideo.muted = true;
+    desktopVideo.play();
+    mobileVideo.play();
   
-    document.onload = preLoader();
+    // document.onload = preLoader();
 
     function preLoader() {
 
@@ -112,7 +116,7 @@
   
   {% if template.name == 'index' %}
     {% render 'navbar--home' %}
-    {% render 'preloader' %}
+    {% comment %} {% render 'preloader' %} {% endcomment %}
   {% else %}
     {% section 'navbar' %}
   {% endif %}

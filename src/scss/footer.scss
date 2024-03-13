@@ -1,5 +1,7 @@
 .footer-update {
     //padding: 20px var(--side-padding);
+    background: var(--black);
+    color: var(--white);
 
     .row {
         display: grid;
@@ -22,7 +24,7 @@
 
     input {
         background: transparent;
-        border: var(--border-black);
+        border: var(--border-white);
         padding-left: 4px;
         font-size: 14px;
         text-transform: lowercase;
@@ -36,7 +38,8 @@
         font-size: 14px;
         text-transform: lowercase;
         background: transparent;
-        border: var(--border-black);
+        border: var(--border-white);
+        color: var(--white);
     }
 
 }

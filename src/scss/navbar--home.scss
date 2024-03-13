@@ -27,7 +27,6 @@
         left: 0;
         transform: translateX(-100%);
         z-index: 999;
-        min-width: 30vw;
         color: var(--black);
         text-transform: lowercase;
         transition: all 0.23s ease-in-out;
@@ -46,19 +45,22 @@
                     font-size: 26px;
                     letter-spacing: -0.5px;
                     text-decoration: none;
+                    display: block;
                 }
 
-                a:hover {
-                    text-decoration: none;
-                }
             }
 
-            li span.arrow {
-                transition: all 0.12s ease-in-out;
+            li:hover a {
+                text-decoration: none;
             }
-    
-            li:hover span.arrow {
-                padding-left: 4px;
+
+            .arrow {
+                display: inline-block;
+                transition: all 0.23s ease-in-out;
+            }
+
+            li:hover .arrow {
+                transform: translateX(4px);
             }
 
         }
