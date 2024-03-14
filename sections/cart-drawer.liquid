@@ -11,7 +11,7 @@
     <div class="cart-items" data-ajax-cart-section>
       {% if cart.empty? %}
         <div class="drawer-empty">
-          no items in cart
+          {{ 'no items in cart' | escape }}
         </div>
       {% else %}
         <ul class="drawer-has-items">
