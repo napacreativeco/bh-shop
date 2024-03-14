@@ -7,7 +7,7 @@
     max-width: 75vw;
     background: var(--white);
     color: var(--black);
-    z-index: 9;
+    z-index: 99;
     display: grid;
     grid-template-rows: auto 1fr;
     padding-top: 15px;
@@ -29,6 +29,22 @@
     .cart-items::-webkit-scrollbar-thumb {
         background-color: var(--black);
         border-radius: 20px;
+    }
+
+    .cart-icon {
+        position: absolute;
+        top: 19px;
+        right: 15px;
+
+        a {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        svg {
+            width: 30px;
+        }
     }
 
     form {

@@ -6,6 +6,7 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        gap: 3%;
 
         .images {
 
@@ -178,6 +179,8 @@
 
                 .swiper {
                     height: auto;
+                    aspect-ratio: 1/1;
+
                     .swiper-slide {
                         width: 100%;
                         // img {
