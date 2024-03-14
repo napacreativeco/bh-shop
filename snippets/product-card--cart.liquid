@@ -4,7 +4,7 @@
 
     <div class="left">
         {% for image in item.product.media limit: 1 %}
-            <div class="image" onclick="window.location='{{ item.product.url }}';" style="background: url('{{ image | image_url: width: 200 }}'); background-size: cover; background-position: center center;">
+            <div class="image" onclick="window.location='{{ item.product.url }}';" style="background: url('{{ image | image_url: width: '600' }}'); background-size: cover; background-position: center center;">
             </div>
         {% endfor %}
     </div>
