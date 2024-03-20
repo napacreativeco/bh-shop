@@ -11,6 +11,7 @@
     display: grid;
     grid-template-rows: auto 1fr;
     padding-top: 15px;
+    border-left: var(--border-black);
 
     .cart-items {
         height: 100%;
