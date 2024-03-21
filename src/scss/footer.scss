@@ -10,11 +10,12 @@
         grid-gap: 10px;
         align-items: center;
         padding: 20px var(--side-padding);
+        width: calc(100% - var(--side-padding) );
     }
 
     .form-container {
         display: grid;
-        grid-template-columns: 2fr 1fr;
+        grid-template-columns: 2fr auto;
         grid-gap: 6px;
     }
 
@@ -26,7 +27,7 @@
     input {
         background: transparent;
         border: var(--border-white);
-        padding-left: 4px;
+        padding-left: 6px;
         font-size: 14px;
         text-transform: lowercase;
     }
@@ -41,6 +42,7 @@
         background: transparent;
         border: var(--border-white);
         color: var(--white);
+        padding: 6px 10px;
     }
 
 }
