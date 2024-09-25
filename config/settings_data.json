@@ -1,16 +1,25 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "current": {
     "use_logo": false,
     "website_tagline": "slowly at first, then, all at once",
-    "bh_instagram": "https:\/\/www.instagram.com\/bighousedot",
+    "bh_instagram": "https://www.instagram.com/bighousedot",
     "customer_layout": "theme",
     "example_option": "option",
     "sections": {
       "navbar": {
         "type": "navbar",
         "settings": {
-          "nav_logo": "shopify:\/\/shop_images\/bighouse-logo.svg",
-          "cart_icon": "shopify:\/\/shop_images\/cart-icon.svg"
+          "nav_logo": "shopify://shop_images/bighouse-logo.svg",
+          "cart_icon": "shopify://shop_images/cart-icon.svg"
         }
       },
       "footer": {
@@ -20,7 +29,7 @@
             "type": "footer_social_links",
             "settings": {
               "social_network_title": "Instagram",
-              "social_network_url": "https:\/\/www.instagram.com\/bighousedot"
+              "social_network_url": "https://www.instagram.com/bighousedot"
             }
           }
         },
@@ -28,7 +37,7 @@
           "b69b35ea-8cf0-42ed-98bc-845870d3075f"
         ],
         "settings": {
-          "footer_logo": "shopify:\/\/shop_images\/bighouse-logo.svg",
+          "footer_logo": "shopify://shop_images/bighouse-logo.svg",
           "footer_tagline": "for equity, parity, and creativity."
         }
       },
@@ -40,24 +49,24 @@
       "hero": {
         "type": "hero",
         "settings": {
-          "hero_video_desktop": "shopify:\/\/files\/videos\/Horizontal Reel Bighouse (1).mp4",
-          "hero_video_mobile": "shopify:\/\/files\/videos\/Big House Reel 23 Vertical.mp4"
+          "hero_video_desktop": "shopify://files/videos/Horizontal Reel Bighouse (1).mp4",
+          "hero_video_mobile": "shopify://files/videos/Big House Reel 23 Vertical.mp4"
         }
       },
       "about": {
         "type": "about",
         "settings": {
           "about_heading": "About us",
-          "about_body": "<p>bighouse is a collective of creators, builders, designers, developers and artists.<\/p><p>we bridge the gap between commerce and culture, connecting seemingly disparate worlds in unique and unexpected ways.<\/p>"
+          "about_body": "<p>bighouse is a collective of creators, builders, designers, developers and artists.</p><p>we bridge the gap between commerce and culture, connecting seemingly disparate worlds in unique and unexpected ways.</p>"
         }
       },
       "clients": {
         "type": "clients",
         "settings": {
           "clients_heading": "We Work With",
-          "clients_body": "<p>Pabst Blue Ribbon<\/p><p>Online Ceramics<\/p><p>STARZ<\/p><p>Pleasures<\/p><p>T-Pain<\/p><p>Wacko Maria<\/p><p>Arrowhead<\/p><p>Gallo<\/p>",
-          "clients_body_two": "<p>Ground Control Touring<\/p><p>UNIFIED Music Group<\/p><p>New Era<\/p><p>Legendary Pictures<\/p><p>Lionsgate<\/p><p>Nautilus Magazine<\/p><p>Bandai Namco<\/p>",
-          "clients_body_three": "<p>Warner Music Group<\/p><p>Sesame Street<\/p><p>Smirnoff<\/p><p>Marc Jacobs<\/p><p>Universal<\/p><p>NPR<\/p>"
+          "clients_body": "<p>Pabst Blue Ribbon</p><p>Online Ceramics</p><p>STARZ</p><p>Pleasures</p><p>T-Pain</p><p>Wacko Maria</p><p>Gallo</p>",
+          "clients_body_two": "<p>New Era</p><p>Legendary Pictures</p><p>Lionsgate</p><p>Casio</p><p>Konami</p><p>Levi's</p>",
+          "clients_body_three": "<p>Warner Music Group</p><p>Sesame Street</p><p>Marc Jacobs</p><p>Universal</p><p>NPR</p><p>Bandai Namco</p>"
         }
       }
     },
