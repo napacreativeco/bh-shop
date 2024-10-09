@@ -1,5 +1,17 @@
 {{ 'product--page.css' | asset_url | stylesheet_tag }}
 
+<style>
+  .single-product form .images .swiper {
+    max-width: 60vw;
+  }
+
+  @media screen and (max-width: 900px) {
+    .single-product form .images .swiper {
+      max-width: 64vw;
+    }
+  }
+</style>
+
 {% assign add_to_cart = 'Add to cart' %}
 {% assign sold_out = 'Sold Out' %}
 {% assign unavailable = 'Unavailable' %}
