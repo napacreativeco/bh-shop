@@ -26,6 +26,17 @@
     ]
   },
   {
+    "name": "Shop",
+    "settings": [
+      {
+        "type": "number",
+        "id": "collection-pagination",
+        "label": "Pagination",
+        "default": 3
+      }
+    ]
+  },
+  {
     "name": "Social Media",
     "settings": [
       {
