@@ -63,12 +63,10 @@
       <div class="title">
         <h1>{{ product.title }}</h1>
       </div>
-
-      {% if product.metafields.custom.excerpt != blank %}
-        <div class="excerpt">
-          {{ product.metafields.custom.excerpt | metafield_tag | newline_to_br }}
-        </div>
-      {% endif %}
+      
+      <div class="subtitle">
+        {{ product.metafields.custom.subtitle }}
+      </div>
 
       <div class="price">
         {% if product.price_varies %}
