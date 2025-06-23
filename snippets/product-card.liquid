@@ -10,8 +10,8 @@
   <div class="image" onclick="window.location='{{ product.url | within: collection }}';">
     {% if product.featured_image %}
       <img 
-        width="100"
-        height="100"
+        width="600"
+        height="600"
         class="product-card-image"
         src="{{ product.featured_image | image_url: width: 900 }}" 
         data-first="{{ product.images[0] | image_url: width: 900 }}"
