@@ -60,7 +60,7 @@
       
       {% if product.description != blank %}
         <div class="description">
-          {{ product.description }}
+          {{ product.metafields.custom.excerpt }}
         </div>
       {% endif %}
 
