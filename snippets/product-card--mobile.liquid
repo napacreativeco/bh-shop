@@ -25,12 +25,8 @@
     
     <div class="data">
 
-      <div class="limited-indicator">
-        {% if product.metafields.custom.limited_indicator.value != false or product.metafields.custom.limited_indicator.value != blank %}
-          <span>
-            {{ 'Limited Edition' | escape }}
-          </span>
-        {% endif %}
+      <div class="highlight">
+        {{ product.metafields.custom.highlight }}
       </div>
 
       <div class="title">
