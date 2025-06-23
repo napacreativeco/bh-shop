@@ -5,58 +5,62 @@
 
 <li class="product-card {% unless product.available %} sold-out{% endunless %}{% if on_sale %} on-sale{% endif %}">
 
-  <div class="image" onclick="window.location='{{ product.url | within: collection }}';">
-    {% if product.featured_image %}
-      <img 
-        width="600"
-        height="600"
-        class="product-card-image"
-        src="{{ product.featured_image | image_url: width: 900 }}" 
-        data-first="{{ product.images[0] | image_url: width: 900 }}"
-        {% if product.images[1] %}
-            data-second="{{ product.images[1] | image_url: width: 900 }}"
-        {% endif %}
-        alt="{{ product.featured_image.alt | escape }}"
-      />
-    {% else %}
-        {{ 'image' | placeholder_svg_tag }}
-    {% endif %}
-  </div>
-  
-  <div class="data">
+  <div class="card-wrap">
 
-    <div class="title">
-      <a href="{{ product.url | within: collection }}">
-        {{ product.title }}
-      </a>
-    </div>
-
-    {% comment %}
-    <div class="type">
-      <a href="{{ product.url | within: collection }}">
-        {{ product.type }}
-      </a>
-    </div>  
-    {% endcomment %}
-
-    <div class="price" id="product-price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-      <meta itemprop="priceCurrency" content="{{ shop.currency }}" />
-      {% if product.available %}
-        <link itemprop="availability" href="http://schema.org/InStock" />
+    <div class="image" onclick="window.location='{{ product.url | within: collection }}';">
+      {% if product.featured_image %}
+        <img 
+          width="600"
+          height="600"
+          class="product-card-image"
+          src="{{ product.featured_image | image_url: width: 900 }}" 
+          data-first="{{ product.images[0] | image_url: width: 900 }}"
+          {% if product.images[1] %}
+              data-second="{{ product.images[1] | image_url: width: 900 }}"
+          {% endif %}
+          alt="{{ product.featured_image.alt | escape }}"
+        />
       {% else %}
-        <link itemprop="availability" href="http://schema.org/OutOfStock" />
+          {{ 'image' | placeholder_svg_tag }}
       {% endif %}
-      <p>
-        {% assign variant = product.selected_or_first_available_variant %}
-        {% if product.compare_at_price > product.price %}
-          <span class="product-price on-sale" itemprop="price">{{ variant.price | money_without_trailing_zeros }}</span>
-          <s class="product-compare-price">{{ variant.compare_at_price | money_without_trailing_zeros }}</s>
-        {% else %}
-          <span class="product-price" itemprop="price">{{ variant.price | money_without_trailing_zeros }}</span>
-        {% endif %}
-      </p>
     </div>
-
+    
+    <div class="data">
+  
+      <div class="title">
+        <a href="{{ product.url | within: collection }}">
+          {{ product.title }}
+        </a>
+      </div>
+  
+      {% comment %}
+      <div class="type">
+        <a href="{{ product.url | within: collection }}">
+          {{ product.type }}
+        </a>
+      </div>  
+      {% endcomment %}
+  
+      <div class="price" id="product-price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+        <meta itemprop="priceCurrency" content="{{ shop.currency }}" />
+        {% if product.available %}
+          <link itemprop="availability" href="http://schema.org/InStock" />
+        {% else %}
+          <link itemprop="availability" href="http://schema.org/OutOfStock" />
+        {% endif %}
+        <p>
+          {% assign variant = product.selected_or_first_available_variant %}
+          {% if product.compare_at_price > product.price %}
+            <span class="product-price on-sale" itemprop="price">{{ variant.price | money_without_trailing_zeros }}</span>
+            <s class="product-compare-price">{{ variant.compare_at_price | money_without_trailing_zeros }}</s>
+          {% else %}
+            <span class="product-price" itemprop="price">{{ variant.price | money_without_trailing_zeros }}</span>
+          {% endif %}
+        </p>
+      </div>
+  
+    </div>
+    
   </div>
   
 </li>
