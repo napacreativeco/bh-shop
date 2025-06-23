@@ -20,7 +20,14 @@
       grid-template-rows: 1fr auto;
       cursor: pointer;
       width: 100%;
-      outline: 1px solid var(--black);
+      position: relative;
+      /* Remove outline and use box-shadow instead */
+      box-shadow: 
+        1px 0 0 0 var(--black), 
+        0 1px 0 0 var(--black),
+        1px 1px 0 0 var(--black); /* Right and bottom borders */
+      margin-right: -1px; /* Make borders overlap */
+      margin-bottom: -1px;
       min-width: 0;
   }
 
