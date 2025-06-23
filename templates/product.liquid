@@ -55,18 +55,15 @@
     
     <div class="data">
 
-      <div class="limited-indicator">
-        {% if product.metafields.custom.limited_indicator.value != false or product.metafields.custom.limited_indicator.value != blank %}
-          <span>
-            {{ 'Limited Edition' | escape }}
-          </span>
-        {% endif %}
+      
+      <div class="highlight">
+        {{ product.metafields.custom.highlight }}
       </div>
 
       <div class="title">
         <h1>{{ product.title }}</h1>
       </div>
-      
+
       {% if product.metafields.custom.excerpt != blank %}
         <div class="excerpt">
           {{ product.metafields.custom.excerpt | metafield_tag | newline_to_br }}
@@ -80,6 +77,12 @@
           {{ product.price | money_without_trailing_zeros }}
         {% endif %}
       </div>
+
+      {% if product.metafields.custom.excerpt != blank %}
+        <div class="excerpt">
+          {{ product.metafields.custom.excerpt | metafield_tag | newline_to_br }}
+        </div>
+      {% endif %}
       
       {% if product.description != blank %}
         <div class="description">
