@@ -5,5 +5,71 @@
 </style>
 
 <div class="product-card--mobile">
-  
+  <form action="/cart/add" method="post" enctype="multipart/form-data">
+
+    <div class="images">
+
+      <div class="swiper">
+        <div class="swiper-wrapper">
+
+          {% for image in product.images %}
+            <div class="swiper-slide" style="background: url('{{ image | image_url: width: 1200 }}'); background-size: cover; background-position: center center;">
+            </div>
+          {% endfor %}
+              
+        </div>
+
+        <div class="swiper-pagination"></div>
+
+      </div>
+
+    </div>
+    
+    <div class="data">
+
+      <div class="limited-indicator">
+        {% if product.metafields.custom.limited_indicator.value != false or product.metafields.custom.limited_indicator.value != blank %}
+          <span>
+            {{ 'Limited Edition' | escape }}
+          </span>
+        {% endif %}
+      </div>
+
+      <div class="title">
+        <h1>{{ product.title }}</h1>
+      </div>
+      
+      {% if product.metafields.custom.excerpt != blank %}
+        <div class="excerpt">
+          {{ product.metafields.custom.excerpt | metafield_tag | newline_to_br }}
+        </div>
+      {% endif %}
+
+      <div class="price">
+        {% if product.price_varies %}
+          {{ product.price_min | money_without_trailing_zeros }}
+        {% else %}
+          {{ product.price | money_without_trailing_zeros }}
+        {% endif %}
+      </div>
+      
+      {% if product.description != blank %}
+        <div class="description">
+          {{ product.description }}
+        </div>
+      {% endif %}
+
+      {% render 'product--variant-radios' %}
+ 
+      <div class="add-to-cart" id="product-add">
+        <input class="button" type="submit" name="add" id="add" value="{{ add_to_cart | escape }}">
+      </div>
+
+      <div class="form-errors" data-ajax-cart-messages="form" > 
+        <!-- Errors and messages appear here --> 
+      </div>
+
+    </div>
+
+  </form>
 </div>
