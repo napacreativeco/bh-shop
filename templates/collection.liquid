@@ -6,6 +6,7 @@
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 0px;
+      width: 100%; 
   }
 
   @media screen and (max-width: 767px) {
@@ -20,6 +21,7 @@
       cursor: pointer;
       width: 100%;
       outline: 1px solid var(--black);
+      min-width: 0;
   }
 
   .collection-page .product-card .image {
