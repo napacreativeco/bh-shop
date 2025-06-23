@@ -10,12 +10,6 @@
       width: 100%; 
   }
 
-  @media screen and (max-width: 767px) {
-      .products-grid {
-          grid-template-columns: 1fr;
-      }
-  }
-
   .product-card--mobile { display: none; }
   
   .collection-page .product-card .card-wrap {
@@ -102,6 +96,7 @@
   
       .product-card { display: none; }
       .product-card--mobile { display: block; }
+      .products-grid { display: flex; flex-direction: column; gap: 0px; }
   
   }
 </style>
