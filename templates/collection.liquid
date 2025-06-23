@@ -181,7 +181,7 @@
 </style>
 
 <div class="collection-page">
-  {% paginate collection.products by 6 %}
+  {% paginate collection.products by settings.collection-pagination %}
 
     <ul class="products-grid">
       {% for product in collection.products %}
