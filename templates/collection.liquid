@@ -93,10 +93,20 @@
       }
   }
   @media screen and (max-width: 767px) {
-  
-      .product-card { display: none; }
-      .product-card--mobile { display: block; }
+
       .products-grid { display: flex; flex-direction: column; gap: 0px; }
+    
+      .product-card { display: none; }
+    
+      .product-card--mobile { 
+          display: block; 
+      }
+    
+      .product-card--mobile .images {
+          width: 100%
+          aspect-ration: 4/3;
+      }
+      
   
   }
 </style>
