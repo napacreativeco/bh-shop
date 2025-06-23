@@ -36,12 +36,6 @@
       <div class="subtitle">
         {{ product.metafields.custom.subtitle }}
       </div>
-      
-      {% if product.metafields.custom.excerpt != blank %}
-        <div class="excerpt">
-          {{ product.metafields.custom.excerpt | metafield_tag | newline_to_br }}
-        </div>
-      {% endif %}
 
       <div class="price">
         {% if product.price_varies %}
@@ -50,6 +44,12 @@
           {{ product.price | money_without_trailing_zeros }}
         {% endif %}
       </div>
+      
+      {% if product.metafields.custom.excerpt != blank %}
+        <div class="excerpt">
+          {{ product.metafields.custom.excerpt | metafield_tag | newline_to_br }}
+        </div>
+      {% endif %}
 
       {% render 'product--variant-radios' %}
  
