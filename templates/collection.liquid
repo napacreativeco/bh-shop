@@ -195,32 +195,30 @@
         <li>{{ 'no products found' | escape }}</li>
       {% endfor %}
     </ul>
+
+    {% if paginate.pages > 1 %}
+      <div class="pagination">
   
-    <div class="pagination">
-      {% if paginate.pages > 1 %}
-
-        {% if paginate.previous %}
-          <a href="{{ paginate.previous.url }}" class="prev">Previous</a>
-        {% endif %}
-      
-        {% for part in paginate.parts %}
-          {% if part.is_link %}
-            <a href="{{ part.url }}">{{ part.title }}</a>
-          {% elsif part.title == paginate.current_page %}
-            <span class="current">{{ part.title }}</span>
-          {% else %}
-            <span>{{ part.title }}</span>
+          {% if paginate.previous %}
+            <a href="{{ paginate.previous.url }}" class="prev">Previous</a>
           {% endif %}
-        {% endfor %}
-      
-        {% if paginate.next %}
-          <a href="{{ paginate.next.url }}" class="next">Next</a>
-        {% endif %}
-
-      {% else %}
         
-      {% endif %}
-    </div>
+          {% for part in paginate.parts %}
+            {% if part.is_link %}
+              <a href="{{ part.url }}">{{ part.title }}</a>
+            {% elsif part.title == paginate.current_page %}
+              <span class="current">{{ part.title }}</span>
+            {% else %}
+              <span>{{ part.title }}</span>
+            {% endif %}
+          {% endfor %}
+        
+          {% if paginate.next %}
+            <a href="{{ paginate.next.url }}" class="next">Next</a>
+          {% endif %}
+          
+      </div>
+    {% endif %}
   
   {% endpaginate %}
 </div>
