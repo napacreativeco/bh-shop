@@ -190,7 +190,8 @@
     <ul class="products-grid">
       {% for product in collection.products %}
         {% render 'product-card' product: product %}
-        {% for i in 12 %} {% comment %}TEST LOOP{% endcomment %}
+        {% assign i = 12 %}
+        {% for i in 12  %} {% comment %}TEST LOOP{% endcomment %}
           {% render 'product-card--mobile' product: product %}
         {% endfor %}
       {% else %}
