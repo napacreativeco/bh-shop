@@ -1,3 +1,96 @@
+<style>
+  .footer-update {
+      background: var(--black);
+      color: var(--white)
+  }
+  
+  .footer-update .row {
+      display: grid;
+      grid-template-columns: repeat(4, 25%);
+      grid-gap: 10px;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      padding: 20px var(--side-padding);
+      width: calc(100% - var(--side-padding))
+  }
+  
+  .footer-update .form-container {
+      display: grid;
+      grid-template-columns: 2fr auto;
+      grid-gap: 6px
+  }
+  
+  .footer-update a,
+  .footer-update p {
+      font-size: 14px;
+      text-transform: lowercase
+  }
+  
+  .footer-update input {
+      background: 0 0;
+      border: var(--border-white);
+      padding-left: 6px;
+      font-size: 14px;
+      text-transform: lowercase
+  }
+  
+  .footer-update input::-webkit-input-placeholder {
+      color: var(--white)
+  }
+  
+  .footer-update input::-moz-placeholder {
+      color: var(--white)
+  }
+  
+  .footer-update input:-ms-input-placeholder {
+      color: var(--white)
+  }
+  
+  .footer-update input::-ms-input-placeholder {
+      color: var(--white)
+  }
+  
+  .footer-update input::placeholder {
+      color: var(--white)
+  }
+  
+  .footer-update button {
+      font-size: 14px;
+      text-transform: lowercase;
+      background: 0 0;
+      border: var(--border-white);
+      color: var(--white);
+      padding: 6px 10px
+  }
+  
+  @media screen and (max-width:767px) {
+      .footer-update .row {
+          grid-template-columns: 1fr
+      }
+  
+      .footer-update .tagline {
+          margin-bottom: 30px
+      }
+  
+      .footer-update .form-container {
+          margin-top: 30px;
+          grid-template-columns: 3fr auto
+      }
+  
+      .footer-update input {
+          font-size: 18px
+      }
+  
+      .footer-update button {
+          font-size: 18px;
+          font-weight: 400 !important;
+          font-family: var(--body) !important;
+          border-radius: 0 !important
+      }
+  }
+</style>
+
 <footer class="footer-update">
     <div class="row">
         <div class="tagline">
