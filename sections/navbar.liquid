@@ -1,47 +1,46 @@
 <style>
-  .navbar {
-    .navbar-wrapper {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: nowrap;
-        padding: 15px 15px 15px 15px;
-
-        .site-logo {
-            img {
-                width: 100%;
-                //max-width: 132px;
-                height: 40px;
-            }
-        }
-
-        .cart-icon {
-            position: relative;
-            z-index: 99;
-        }
-        
-        .cart-icon a {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            gap: 4px;
-            text-decoration: none;
-
-            img {
-                width: 100%;
-                max-width: 30px;
-            }
-
-            .counter {
-                font-size: 1.4rem;
-            }
-            
-        }
-        .cart-icon a:hover {
-            text-decoration: underline;
-        }
+.navbar .navbar-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    padding: 15px 15px 15px 15px;
+}
+  
+.navbar .site-logo {
+    img {
+        width: 100%;
+        //max-width: 132px;
+        height: 40px;
     }
+}
+
+.navbar .cart-icon {
+    position: relative;
+    z-index: 99;
+}
+
+.navbar .cart-icon a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
+    text-decoration: none;
+
+    img {
+        width: 100%;
+        max-width: 30px;
+    }
+
+    .counter {
+        font-size: 1.4rem;
+    }
+    
+}
+  
+.navbar .cart-icon a:hover {
+    text-decoration: underline;
 }
 </style>
 
