@@ -1,6 +1,17 @@
-{{ 'collection--default.css' | asset_url | stylesheet_tag }}
-
 <style>
+
+  .products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0px;
+  }
+
+  @media screen and (max-width: 767px) {
+      .products-grid {
+          grid-template-columns: 1fr;
+      }
+  }
+  
   .collection-page .product-card {
       display: grid;
       grid-template-rows: 1fr auto;
