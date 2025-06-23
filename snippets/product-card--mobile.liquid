@@ -57,12 +57,6 @@
           {{ product.price | money_without_trailing_zeros }}
         {% endif %}
       </div>
-      
-      {% if product.description != blank %}
-        <div class="description">
-          {{ product.metafields.custom.excerpt | metafield_tag }}
-        </div>
-      {% endif %}
 
       {% render 'product--variant-radios' %}
  
