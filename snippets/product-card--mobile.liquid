@@ -1,7 +1,12 @@
 <style>
   .product-card--mobile {
-    
+
   }
+
+  .product-card--mobile .images {
+      width: 100%
+      aspect-ration: 4/3;
+    }
 </style>
 
 <div class="product-card--mobile">
@@ -73,3 +78,9 @@
 
   </form>
 </div>
+
+<script>
+  
+Shopify.Image.preload({{ product.images | json }}, 'grande');
+Shopify.Image.preload({{ product.images | json }}, '1024x1024');
+</script>
