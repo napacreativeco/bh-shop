@@ -1,16 +1,16 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "current": {
     "use_logo": false,
-    "website_tagline": "slowly at first, then, all at once",
+    "website_tagline": "for equity, parity and creativity.",
     "bh_instagram": "https://www.instagram.com/bighousedot",
     "customer_layout": "theme",
     "example_option": "option",
@@ -43,8 +43,7 @@
       },
       "cart-drawer": {
         "type": "cart-drawer",
-        "settings": {
-        }
+        "settings": {}
       },
       "hero": {
         "type": "hero",
@@ -70,10 +69,7 @@
         }
       }
     },
-    "content_for_index": [
-
-    ]
+    "content_for_index": []
   },
-  "presets": {
-  }
+  "presets": {}
 }
