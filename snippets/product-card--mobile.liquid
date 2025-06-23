@@ -32,6 +32,10 @@
       <div class="title">
         <h1><a href="{{ product.url }}" title="{{ product.title }}">{{ product.title }}</a></h1>
       </div>
+
+      <div class="subtitle">
+        {{ product.metafields.custom.subtitle }}
+      </div>
       
       {% if product.metafields.custom.excerpt != blank %}
         <div class="excerpt">
