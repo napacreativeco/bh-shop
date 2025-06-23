@@ -33,11 +33,13 @@
       </a>
     </div>
 
+    {% comment %}
     <div class="type">
       <a href="{{ product.url | within: collection }}">
         {{ product.type }}
       </a>
     </div>  
+    {% endcomment %}
 
     <div class="price" id="product-price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
       <meta itemprop="priceCurrency" content="{{ shop.currency }}" />
