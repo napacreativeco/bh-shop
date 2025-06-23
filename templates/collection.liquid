@@ -186,8 +186,63 @@
 
 <div class="collection-page">
   {% paginate collection.products by settings.collection-pagination %}
-    {{  settings.collection-pagination }}
+    
+    
     <ul class="products-grid">
+      {% for product in collection.products %}
+        {% render 'product-card' product: product %}
+        {% render 'product-card--mobile' product: product %}
+      {% else %}
+        <li>{{ 'no products found' | escape }}</li>
+      {% endfor %}
+    </ul>
+
+        <ul class="products-grid">
+      {% for product in collection.products %}
+        {% render 'product-card' product: product %}
+        {% render 'product-card--mobile' product: product %}
+      {% else %}
+        <li>{{ 'no products found' | escape }}</li>
+      {% endfor %}
+    </ul>
+
+        <ul class="products-grid">
+      {% for product in collection.products %}
+        {% render 'product-card' product: product %}
+        {% render 'product-card--mobile' product: product %}
+      {% else %}
+        <li>{{ 'no products found' | escape }}</li>
+      {% endfor %}
+    </ul>
+
+        <ul class="products-grid">
+      {% for product in collection.products %}
+        {% render 'product-card' product: product %}
+        {% render 'product-card--mobile' product: product %}
+      {% else %}
+        <li>{{ 'no products found' | escape }}</li>
+      {% endfor %}
+    </ul>
+
+        <ul class="products-grid">
+      {% for product in collection.products %}
+        {% render 'product-card' product: product %}
+        {% render 'product-card--mobile' product: product %}
+      {% else %}
+        <li>{{ 'no products found' | escape }}</li>
+      {% endfor %}
+    </ul>
+
+        <ul class="products-grid">
+      {% for product in collection.products %}
+        {% render 'product-card' product: product %}
+        {% render 'product-card--mobile' product: product %}
+      {% else %}
+        <li>{{ 'no products found' | escape }}</li>
+      {% endfor %}
+    </ul>
+
+        <ul class="products-grid">
       {% for product in collection.products %}
         {% render 'product-card' product: product %}
         {% render 'product-card--mobile' product: product %}
