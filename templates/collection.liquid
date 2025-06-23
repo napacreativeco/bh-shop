@@ -190,9 +190,7 @@
     <ul class="products-grid">
       {% for product in collection.products %}
         {% render 'product-card' product: product %}
-        {% for i in (1..12) %} {% comment %}TEST LOOP{% endcomment %}
-          {% render 'product-card--mobile' product: product %}
-        {% endfor %}
+        {% render 'product-card--mobile' product: product %}
       {% else %}
         <li>{{ 'no products found' | escape }}</li>
       {% endfor %}
