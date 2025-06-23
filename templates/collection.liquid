@@ -20,15 +20,9 @@
       grid-template-rows: 1fr auto;
       cursor: pointer;
       width: 100%;
-      position: relative;
-      /* Remove outline and use box-shadow instead */
-      box-shadow: 
-        1px 0 0 0 var(--black), 
-        0 1px 0 0 var(--black),
-        1px 1px 0 0 var(--black); /* Right and bottom borders */
-      margin-right: -1px; /* Make borders overlap */
-      margin-bottom: -1px;
+      border: 1px solid var(--black);
       min-width: 0;
+      border-collapse: collapse;
   }
 
   .collection-page .product-card .image {
