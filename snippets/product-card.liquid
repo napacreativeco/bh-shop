@@ -13,10 +13,10 @@
           width="600"
           height="600"
           class="product-card-image"
-          src="{{ product.featured_image | image_url: width: 900 }}" 
-          data-first="{{ product.images[0] | image_url: width: 900 }}"
+          src="{{ product.featured_image | image_url: width: 1500 }}" 
+          data-first="{{ product.images[0] | image_url: width: 1500 }}"
           {% if product.images[1] %}
-              data-second="{{ product.images[1] | image_url: width: 900 }}"
+              data-second="{{ product.images[1] | image_url: width: 1500 }}"
           {% endif %}
           alt="{{ product.featured_image.alt | escape }}"
         />
@@ -32,14 +32,6 @@
           {{ product.title }}
         </a>
       </div>
-  
-      {% comment %}
-      <div class="type">
-        <a href="{{ product.url | within: collection }}">
-          {{ product.type }}
-        </a>
-      </div>  
-      {% endcomment %}
   
       <div class="price" id="product-price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
         <meta itemprop="priceCurrency" content="{{ shop.currency }}" />
