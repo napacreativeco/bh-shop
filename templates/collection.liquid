@@ -1,0 +1,276 @@
+<style>
+* {
+    box-sizing: border-box;
+    border-collapse: collapse;
+} 
+  .products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0px;
+      width: 100%; 
+  }
+
+  .product-card--mobile { display: none; }
+
+  .collection-page .product-card .card-wrap {
+      display: grid;
+      grid-template-rows: 1fr auto;
+      cursor: pointer;
+      width: 100%;
+      height: 100%;
+      border: 1px solid var(--black);
+      border-left: 0px;
+      /* border-right: 1px solid var(--black);
+      border-bottom: 1px solid var(--black); */
+      min-width: 0;
+  }
+
+  /* Bottom Row */
+  .collection-page .product-card:nth-of-type(4) .card-wrap,
+  .collection-page .product-card:nth-of-type(5) .card-wrap,
+  .collection-page .product-card:nth-of-type(6) .card-wrap  {
+    border-top: 0 !important;  
+  }
+
+  .collection-page .product-card:nth-of-type(3) .card-wrap,
+  .collection-page .product-card:nth-of-type(6) .card-wrap,
+  .collection-page .product-card:nth-of-type(9) .card-wrap  {
+    border-right: 0 !important;  
+  }
+  
+  /* .collection-page .product-card:nth-child(n + 4) .card-wrap {
+    border-bottom: 0 !important;
+    border-top: 0 !important;
+  } */
+  /* .collection-page .product-card:nth-child(n + 4) .card-wrap {
+    border-bottom: 0 !important;
+    border-top: 0 !important;
+  } */
+
+  /* .collection-page .product-card:nth-child(-n + 3) .card-wrap {
+     border-bottom: 0 !important; 
+  } */
+  
+  .collection-page .product-card .image {
+      overflow: hidden;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      aspect-ratio: 4/5;
+      transition: opacity: 0.2s ease-in-out;
+  }
+  
+  .collection-page .product-card img {
+      object-fit: cover;
+      object-position: center center;
+      height: 100%;
+      min-width: 100%;
+      display: block;
+  }
+
+  .collection-page .product-card .data {
+      margin-right: 0px;
+      background: var(--white);
+      color: var(--black);
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      padding: 8px 10px;
+      font-size: 18px;
+      border-top: 1px solid var(--black);
+  }
+  
+  .collection-page .product-card .data a {
+      font-size: 18px;
+  }
+  
+  .collection-page .product-card:hover .title a {
+      text-decoration: underline;
+  }
+
+  .pagination {
+    padding: var(--side-padding);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .pagination .current {
+    position: relative; 
+    
+  }
+  
+  .pagination .current:before {
+    content: '';
+    border: 1px solid var(--black);
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    bottom: -2px;
+    left: -2px;
+    display: block;
+    aspect-ratio: 1/1;
+  }
+
+  /*
+  ----------------------------------------------------------------
+  */
+  @media screen and (max-width: 1024px) {
+      .collection-page .product-card .data {
+        font-size: 16px;
+      }
+
+      .collection-page .product-card a {
+        font-size: 16px;
+      }
+  }
+  
+  @media screen and (max-width: 767px) {
+
+      .products-grid { display: flex; flex-direction: column; gap: 0px; }
+    
+      .product-card { display: none; }
+    
+      .product-card--mobile { 
+          display: block; 
+          font-size: 16px;
+          line-height: 1.3;
+          border-bottom: 1px solid var(--black);
+          padding: 0 0 var(--side-padding) 0;
+      }
+
+      .product-card--mobile form {
+        padding: var(--side-padding);    
+      }
+
+      /* 
+      == Product Card: Swiper ==
+      */
+      .product-card--mobile .swiper {
+          width: 100%;
+          aspect-ratio: 5/4;
+          margin: 0 0 10px 0;
+      }
+
+      .swiper-pagination {
+          text-align: right;
+          padding: 0 10px 5px 0;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          gap: 0px;
+      }
+
+     .swiper-pagination .swiper-pagination-bullet {
+          width: 8px;
+          height: 8px;
+          display: inline-block;
+          border: 1px solid var(--white);
+          outline: 1px solid var(--black);
+          border-radius: var(--swiper-pagination-bullet-border-radius,50%);
+          background: var(--white);
+          opacity: 1;
+      }
+    
+      .swiper-pagination .swiper-pagination-bullet-active {
+          background: var(--black);
+      }
+
+    /* 
+    == Product Card: Data ==
+    */
+    .product-card--mobile .highlight {
+      margin: 0 0 20px 0;
+      text-transform: uppercase;
+    }
+
+    .product-card--mobile .title {
+      font-size: 26px;
+      font-weight: 100;
+      text-transform: uppercase;
+      margin: 0 0 4px 0;
+    }
+    
+    .product-card--mobile .subtitle {
+      margin: 0 0 20px 0;
+    }
+
+    .product-card--mobile .price {
+      margin: 0 0 20px 0;
+    }
+
+
+    .product-card--mobile .metafield-rich_text_field {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      line-height: 1.3;
+      margin: 0 0 14px 0;
+    }
+
+      .product-card--mobile .add-to-cart .button {
+        font-size: 28px;
+        font-family: var(--sans-serif);
+        font-weight: 400;
+        padding: 10px 20px;
+        border-radius: 0;
+        width: 100%;
+      }
+  
+  }
+</style>
+
+<div class="collection-page">
+  {% paginate collection.products by settings.collection-pagination %}
+    
+    <ul class="products-grid">
+      {% for product in collection.products %}
+        {% render 'product-card' product: product %}
+        {% render 'product-card--mobile' product: product %}
+      {% else %}
+        <li>{{ 'no products found' | escape }}</li>
+      {% endfor %}
+    </ul>
+
+    {% if paginate.pages > 1 %}
+      <div class="pagination">
+  
+          {% if paginate.previous %}
+            <a href="{{ paginate.previous.url }}" class="prev">Previous</a>
+          {% endif %}
+        
+          {% for part in paginate.parts %}
+            {% if part.is_link %}
+              <a href="{{ part.url }}">{{ part.title }}</a>
+            {% elsif part.title == paginate.current_page %}
+              <span class="current">{{ part.title }}</span>
+            {% else %}
+              <span>{{ part.title }}</span>
+            {% endif %}
+          {% endfor %}
+        
+          {% if paginate.next %}
+            <a href="{{ paginate.next.url }}" class="next">Next</a>
+          {% endif %}
+          
+      </div>
+    {% endif %}
+  
+  {% endpaginate %}
+</div>
+
+{% comment %}
+  JavaScript for collection sorting.
+{% endcomment %}
+<script>
+jQuery('.sort-by')
+  .val('{{ collection.sort_by | default: collection.default_sort_by }}')
+  .on('change', function() {
+    Shopify.queryParams.sort_by = jQuery(this).val();
+    location.search = jQuery.param(Shopify.queryParams).replace(/\+/g, '%20');
+  });
+</script>
