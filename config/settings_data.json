@@ -11,6 +11,7 @@
   "current": {
     "use_logo": false,
     "website_tagline": "for equity, parity and creativity.",
+    "collection-pagination": 6,
     "bh_instagram": "https://www.instagram.com/bighousedot",
     "customer_layout": "theme",
     "example_option": "option",
