@@ -243,9 +243,9 @@
             {% if part.is_link %}
               <a href="{{ part.url }}">{{ part.title }}</a>
             {% elsif part.title == paginate.current_page %}
-              <span class="current">{{ part.title }}</span>
+              <div class="current">{{ part.title }}</div>
             {% else %}
-              <span>{{ part.title }}</span>
+              <div>{{ part.title }}</div>
             {% endif %}
           {% endfor %}
         
