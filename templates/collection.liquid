@@ -184,6 +184,7 @@
   }
 </style>
 
+{% if customer %}
 <div class="collection-page">
   {% paginate collection.products by settings.collection-pagination %}
     
@@ -222,7 +223,7 @@
   
   {% endpaginate %}
 </div>
-
+{% endif %}
 {% comment %}
   JavaScript for collection sorting.
 {% endcomment %}
