@@ -190,8 +190,8 @@
       console.log( 'Before request', requestState );
       
       const myResultCallback = function ( requestState ) {
-        console.log( 'After request', requestState );
-        console.log(requestState.responseData.body.item_count);
+        //console.log( 'After request', requestState );
+        //console.log(requestState.responseData.body.item_count);
         var total = requestState.responseData.body.final_price / 100;
         var itemCount = requestState.responseData.body.item_count;
         
@@ -200,6 +200,7 @@
         } else {
           $('.total-value').html('$' + total);
         }
+        
       }
       
       subscribeToResult( myResultCallback );
