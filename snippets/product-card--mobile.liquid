@@ -51,7 +51,9 @@
         </div>
       {% endif %}
 
-      {% render 'product--variant-radios' %}
+      {% if product.options.size > 0 %}
+        {% render 'product--variant-radios' %}
+      {% endif %}
  
       <div class="add-to-cart" id="product-add">
         <input class="button" type="submit" name="add" id="add" value="{{ add_to_cart | escape }}">
