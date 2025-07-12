@@ -13,7 +13,7 @@
           {% assign first = image[0] %}
           {% assign second = image[1] %}
         {% endfor %}
-        {{ product.metafields.products.catalog_images.value }}
+        {{ product.metafields.products.catalog_images.value | metafield_tag }}
         {{ second }}
         <img 
           width="600"
