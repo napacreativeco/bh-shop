@@ -3,19 +3,27 @@
   {% assign on_sale = true %}
 {% endif %}
 
+{% comment %}
+  -------
+ GET PRODUCT IMAGES
+ /collections/*
+  -------
+{% endcomment %}
+{% for image in product.metafields.products.catalog_images.value %}
+  {% if forloop.first %}
+    {% assign first = image %}
+  {% else %}
+    {% assign second = image %}
+  {% endif %}
+{% endfor %}
+
 <li class="product-card {% unless product.available %} sold-out{% endunless %}{% if on_sale %} on-sale{% endif %}">
 
   <div class="card-wrap">
 
     <div class="image" onclick="window.location='{{ product.url | within: collection }}';">
       {% if isCollection == true %}
-        {% for image in product.metafields.products.catalog_images.value %}
-          {% if forloop.first %}
-            {% assign first = image %}
-          {% else %}
-            {% assign second = image %}
-          {% endif %}
-        {% endfor %}
+
         <img 
           width="600"
           height="600"
