@@ -192,7 +192,7 @@
       const myResultCallback = function ( requestState ) {
         console.log( 'After request', requestState );
         console.log(requestState.responseData.body.item_count);
-        var total = requestState.responseData.body.total_price / 100;
+        var total = requestState.responseData.body.final_price / 100;
         $('.total-value').html('$' + total);
       }
       
