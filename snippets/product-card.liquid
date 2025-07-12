@@ -9,7 +9,7 @@
 
     <div class="image" onclick="window.location='{{ product.url | within: collection }}';">
       {% if isCollection == true %}
-        {% for image in product.metafields.products.catalog_images %}
+        {% for image in product.metafields.products.catalog_images.value %}
           {% assign first = image[0] %}
           {% assign second = image[1] %}
         {% endfor %}
