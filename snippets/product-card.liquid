@@ -9,17 +9,31 @@
 
     <div class="image" onclick="window.location='{{ product.url | within: collection }}';">
       {% if product.featured_image %}
-        <img 
-          width="600"
-          height="600"
-          class="product-card-image"
-          src="{{ product.featured_image | image_url: width: 1500 }}" 
-          data-first="{{ product.images[0] | image_url: width: 1500 }}"
-          {% if product.images[1] %}
-              data-second="{{ product.images[1] | image_url: width: 1500 }}"
+        
+          {% if isCollection == true %}
+            <img 
+              width="600"
+              height="600"
+              class="product-card-image"
+              src="{{ product.metafields.products.catalog_images[0] | image_url: width: 1500 }}" 
+              data-first="{{ product.metafields.products.catalog_images[0] | image_url: width: 1500 }}"
+              data-second="{{ product.metafields.products.catalog_images[1] | image_url: width: 1500 }}"
+              alt="{{ product.featured_image.alt | escape }}"
+            />
+          {% else %}
+            <img 
+              width="600"
+              height="600"
+              class="product-card-image"
+              src="{{ product.featured_image | image_url: width: 1500 }}" 
+              data-first="{{ product.images[0] | image_url: width: 1500 }}"
+              {% if product.images[1] %}
+                  data-second="{{ product.images[1] | image_url: width: 1500 }}"
+              {% endif %}
+              alt="{{ product.featured_image.alt | escape }}"
+            />
           {% endif %}
-          alt="{{ product.featured_image.alt | escape }}"
-        />
+        
       {% else %}
           {{ 'image' | placeholder_svg_tag }}
       {% endif %}
