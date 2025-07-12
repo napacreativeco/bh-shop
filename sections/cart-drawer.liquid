@@ -38,7 +38,7 @@
           {{ 'Total' | upcase | escape }}
         </div>
         <div class="total-value value">
-          {{ cart.total_price | money_without_trailing_zeros }}
+          {{ cart.items_subtotal_price | money_without_trailing_zeros }}
         </div>
       </div>
       
