@@ -225,7 +225,7 @@
     
     <ul class="products-grid">
       {% for product in collection.products %}
-        {% render 'product-card' product: product %}
+        {% render 'product-card' product: product, isCollection: true %}
         {% render 'product-card--mobile' product: product %}
       {% else %}
         <li>{{ 'no products found' | escape }}</li>
