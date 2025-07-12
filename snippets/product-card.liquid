@@ -10,7 +10,11 @@
     <div class="image" onclick="window.location='{{ product.url | within: collection }}';">
       {% if isCollection == true %}
         {% for image in product.metafields.products.catalog_images.value %}
-          {{ image }}
+          {% if forloop.first %}
+            {% assign first = image %}
+          {% else %}
+            {% assign second = image %}
+          {% endif %}
         {% endfor %}
         {{ product.metafields.products.catalog_images.value }}
         {{ second }}
@@ -18,7 +22,7 @@
           width="600"
           height="600"
           class="product-card-image"
-          src="{{ product.metafields.products.catalog_images.value | image_url: width: 1500 }}" 
+          src="{{ first | image_url: width: 1500 }}" 
           data-first="{{ first | image_url: width: 1500 }}"
           data-second="{{ second | image_url: width: 1500 }}"
           alt="{{ product.featured_image.alt | escape }}"
