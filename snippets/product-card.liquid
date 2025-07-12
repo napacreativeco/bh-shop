@@ -28,9 +28,9 @@
           width="600"
           height="600"
           class="product-card-image"
-          src="{{ first | image_url: width: 1500 }}" 
-          data-first="{{ first | image_url: width: 1500 }}"
-          data-second="{{ second | image_url: width: 1500 }}"
+          src="{{ first | image_url: width: '1500' }}" 
+          data-first="{{ first | image_url: width: '1500' }}"
+          data-second="{% if second %}{{ second | image_url: width: 1500 }}{% else %}{{ first | image_url: width: '1500' }}{% endif %}"
           alt="{{ product.featured_image.alt | escape }}"
         />
       {% else %}
