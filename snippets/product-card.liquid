@@ -24,6 +24,9 @@
     <div class="image" onclick="window.location='{{ product.url | within: collection }}';">
       {% if isCollection == true %}
 
+        {% comment %}
+        // 4:5 Images
+        {% endcomment %}
         <img 
           width="600"
           height="600"
@@ -33,6 +36,7 @@
           data-second="{% if second %}{{ second | image_url: width: 1500 }}{% else %}{{ first | image_url: width: '1500' }}{% endif %}"
           alt="{{ product.featured_image.alt | escape }}"
         />
+      
       {% else %}
 
         {% if product.featured_image %}
