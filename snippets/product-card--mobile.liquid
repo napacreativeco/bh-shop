@@ -4,27 +4,22 @@
 
 <div class="product-card--mobile">
   <form action="/cart/add" method="post" enctype="multipart/form-data">
-
+    <!-- Add hidden input for product ID -->
+    <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+    
     <div class="images">
-
       <div class="swiper">
         <div class="swiper-wrapper">
-
           {% for image in product.images %}
-              <div class="swiper-slide" style="background: url('{{ image | image_url: width: '1200' }}'); background-size: cover; background-position: center center;">
-              </div>
+            <div class="swiper-slide" style="background: url('{{ image | image_url: width: '1200' }}'); background-size: cover; background-position: center center;">
+            </div>
           {% endfor %}
-              
         </div>
-
         <div class="swiper-pagination"></div>
-
       </div>
-
     </div>
     
     <div class="data">
-
       <div class="highlight">
         {{ product.metafields.custom.highlight }}
       </div>
@@ -51,20 +46,16 @@
         </div>
       {% endif %}
 
- 
       {% render 'product--variant-radios' %}
 
- 
       <div class="add-to-cart" id="product-add">
-        <input class="button" type="submit" name="add" id="add" value="{{ add_to_cart | escape }}">
+        <input class="button" type="submit" name="add" id="add" value="{{ 'products.product.add_to_cart' | t | escape }}">
       </div>
 
-      <div class="form-errors" data-ajax-cart-messages="form" > 
+      <div class="form-errors" data-ajax-cart-messages="form"> 
         <!-- Errors and messages appear here --> 
       </div>
-
     </div>
-
   </form>
 </div>
 
