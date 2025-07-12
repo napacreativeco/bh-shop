@@ -12,7 +12,7 @@
 
           {% for image in product.images %}
             {% assign img = image | image_url %}
-            {% if img contains '.gif' %}
+            {% if img contains ".gif" %}
             {% else %}
               <div class="swiper-slide" style="background: url('{{ image | image_url: width: 1200 }}'); background-size: cover; background-position: center center;">
               </div>
