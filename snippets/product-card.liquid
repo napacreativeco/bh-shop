@@ -34,7 +34,7 @@
             class="product-card-image"
             src="{{ first | image_url: width: '1500' }}" 
             data-first="{{ first | image_url: width: '1500' }}"
-            {% if second == blank or if first contains '.gif' %}
+            {% if second == blank or first contains ".gif" %}
             {% else %}
               data-second="{{ second | image_url: width: 1500 }}"
             {% endif %}
