@@ -11,8 +11,11 @@
         <div class="swiper-wrapper">
 
           {% for image in product.images %}
-            <div class="swiper-slide" style="background: url('{{ image | image_url: width: 1200 }}'); background-size: cover; background-position: center center;">
-            </div>
+            {% if image contains '.gif' %}
+            {% else %}
+              <div class="swiper-slide" style="background: url('{{ image | image_url: width: 1200 }}'); background-size: cover; background-position: center center;">
+              </div>
+            {% endif %}
           {% endfor %}
               
         </div>
