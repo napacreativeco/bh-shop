@@ -10,10 +10,9 @@
     <div class="image" onclick="window.location='{{ product.url | within: collection }}';">
       {% if isCollection == true %}
         {% for image in product.metafields.products.catalog_images.value %}
-          {% assign first = image[0] %}
-          {% assign second = image[1] %}
+          {{ image }}
         {% endfor %}
-        {{ product.metafields.products.catalog_images.value.first }}
+        {{ product.metafields.products.catalog_images.value }}
         {{ second }}
         <img 
           width="600"
