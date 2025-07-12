@@ -13,7 +13,7 @@
           width="600"
           height="600"
           class="product-card-image"
-          src="{{ product.metafields.products.catalog_images.value[0] | image_url: width: 1500 }}" 
+          src="{{ product.metafields.products.catalog_images | image_url: width: 1500 }}" 
           data-first="{{ product.metafields.products.catalog_images.value[0] | image_url: width: 1500 }}"
           data-second="{{ product.metafields.products.catalog_images.value[1] | image_url: width: 1500 }}"
           alt="{{ product.featured_image.alt | escape }}"
