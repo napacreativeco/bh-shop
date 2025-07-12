@@ -193,7 +193,13 @@
         console.log( 'After request', requestState );
         console.log(requestState.responseData.body.item_count);
         var total = requestState.responseData.body.final_price / 100;
-        $('.total-value').html('$' + total);
+        var itemCount = requestState.responseData.body.item_count;
+        
+        if (itemCount < 1) {
+          $('.total-value').html('$' + 0);
+        } else {
+          $('.total-value').html('$' + total);
+        }
       }
       
       subscribeToResult( myResultCallback );
