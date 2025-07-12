@@ -4,6 +4,7 @@
 
 <div class="product-card--mobile">
   <form action="/cart/add" method="post" enctype="multipart/form-data">
+    
     <!-- Add hidden input for product ID -->
     <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
     
@@ -46,7 +47,7 @@
         </div>
       {% endif %}
 
-      {% render 'product--variant-radios' %}
+      {% render 'product--variant-radios', product: product %}
 
       <div class="add-to-cart" id="product-add">
         <input class="button" type="submit" name="add" id="add" value="{{ add_to_cart }}">
