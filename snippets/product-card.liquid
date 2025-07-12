@@ -34,7 +34,10 @@
             class="product-card-image"
             src="{{ first | image_url: width: '1500' }}" 
             data-first="{{ first | image_url: width: '1500' }}"
-            data-second="{% if second == blank or if first ends_with '.gif' %}{{ first | image_url: width: '1500' }}{% else %}{{ second | image_url: width: 1500 }}{% endif %}"
+            {% if second == blank or if first contains '.gif' %}
+            {% else %}
+              data-second="{{ second | image_url: width: 1500 }}"
+            {% endif %}
             alt="{{ product.featured_image.alt | escape }}"
           />
       
