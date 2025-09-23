@@ -120,7 +120,7 @@
       {% render 'product--variant-radios' %}
  
       <div class="add-to-cart" id="product-add">
-        <input class="button" type="submit" name="add" id="add" value="{{ add_to_cart | escape }}">
+        <input class="button" type="submit" name="add" id="add" value="{% if product.available %}{{ add_to_cart | escape }}{% else %}SOLD OUT{% endif %}">
       </div>
 
       <div class="form-errors" data-ajax-cart-messages="form" style="padding: 4px 0 4px 0;"> 
