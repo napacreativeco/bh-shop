@@ -34,11 +34,16 @@
       </div>
 
       <div class="price">
-        {% if product.price_varies %}
-          {{ product.price_min | money_without_trailing_zeros }}
+        {% if product.available %}
+          {% if product.price_varies %}
+            {{ product.price_min | money_without_trailing_zeros }}
+          {% else %}
+            {{ product.price | money_without_trailing_zeros }}
+          {% endif %}
         {% else %}
-          {{ product.price | money_without_trailing_zeros }}
+          {{ 'SOLD OUT' | escape }}
         {% endif %}
+        
       </div>
       
       {% if product.metafields.custom.excerpt != blank %}
