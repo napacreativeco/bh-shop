@@ -100,11 +100,15 @@
         {% endif %}
         <p>
           {% assign variant = product.selected_or_first_available_variant %}
-          {% if product.compare_at_price > product.price %}
-            <span class="product-price on-sale" itemprop="price">{{ variant.price | money_without_trailing_zeros }}</span>
-            <s class="product-compare-price">{{ variant.compare_at_price | money_without_trailing_zeros }}</s>
+          {% if product.available %}
+            {% if product.compare_at_price > product.price %}
+              <span class="product-price on-sale" itemprop="price">{{ variant.price | money_without_trailing_zeros }}</span>
+              <s class="product-compare-price">{{ variant.compare_at_price | money_without_trailing_zeros }}</s>
+            {% else %}
+              <span class="product-price" itemprop="price">{{ variant.price | money_without_trailing_zeros }}</span>
+            {% endif %}
           {% else %}
-            <span class="product-price" itemprop="price">{{ variant.price | money_without_trailing_zeros }}</span>
+            {{ 'SOLD OUT' | escape }}
           {% endif %}
         </p>
       </div>
